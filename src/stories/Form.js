@@ -7,18 +7,24 @@ const style = {
 };
 
 const MovieForm = (props) => (
-  <div>
-    <TextField
-      hintText={props.hintTitle}
-    /><br/>
-    <br/>
-    <TextField
-      hintText={props.hintDescription}
-    /><br/>
-    <RaisedButton label={props.buttonSave} primary={true} style={style}
-    />
-    <RaisedButton label={props.buttonCancel} primary={true} style={style}
-    />
+  <div className="col-xs-12">
+    <div className="row">
+      <div className="col-xs-12">
+        <h3>New List</h3>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-xs-6">
+        <TextField
+          hintText={props.hintTitle}/>
+        <TextField
+          hintText={props.hintDescription}/>
+        <RaisedButton
+          label={props.buttonSave} primary={true} style={style}/>
+        <RaisedButton
+          label={props.buttonCancel} primary={true} style={style}/>
+    </div>
   </div>
+</div>
 );
 export default MovieForm;

@@ -6,11 +6,13 @@ import '../index.css';
 import App from '../App';
 
 import CardExampleExpandable from './Card';
+import ListMovies from './List';
 import MovieForm from './Form';
+import ListGridMovies from './GridList';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-storiesOf('Form', module)
+storiesOf('Pages', module)
 .addDecorator(story => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
     <div className="muiContainer">
@@ -19,25 +21,30 @@ storiesOf('Form', module)
   </MuiThemeProvider>
 ))
 .add('Form new Movie', () => (
-  <div className="col-xs-4">
-    <div className="row">
-      <div className="col-xs-4">
-        <h3>New List</h3>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-xs-4">
-        <MovieForm
-          hintTitle="Title"
-          hintDescription="Description"
-          buttonSave="Save"
-          buttonCancel="Cancel"
-          />
-      </div>
-    </div>
-  </div>
+  <MovieForm
+    hintTitle="Title"
+    hintDescription="Description"
+    buttonSave="Save"
+    buttonCancel="Cancel"
+    />
+))
+.add('List', () => (
+  <ListMovies
+    movie1 = "movie1"
+    movie2 = "movie2"
+    movie3 = "movie3"
+    movie4 = "movie4"
+    movie5 = "movie5"
+    />
 ));
 
+storiesOf('App', module)
+.add('Grid List', () => (
+  <ListGridMovies
+    title1 = "movie1"
+    author1 = "author1"
+    />
+));
 
 storiesOf('App', module)
 .add('default view', () => (
@@ -53,9 +60,6 @@ storiesOf('Button', module)
 .add('with text', () => (
   <Button onClick={action('clicked')}>Hello Button</Button>
 ))
-// .add('Michelle', () => (
-//   <ButtonNEW>Hello</ButtonNEW>
-// ))
 .add('with some emoji', () => (
   <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
 ));
