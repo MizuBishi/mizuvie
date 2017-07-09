@@ -30,6 +30,19 @@ const ListGridMovies = (props) => (
   </div>
 );
 
+const tilesData = [
+  {
+    img: 'images/grid-list/00-52-29-429_640.jpg',
+    title: 'Breakfast',
+    author: 'jill111',
+  },
+  {
+    img: 'images/grid-list/burger-827309_640.jpg',
+    title: 'Tasty burger',
+    author: 'pashminu',
+  },
+];
+
 const GridListExampleSimple = () => (
   <div style={styles.root}>
     <GridList
@@ -37,13 +50,12 @@ const GridListExampleSimple = () => (
       style={styles.gridList}
     >
       <Subheader>December</Subheader>
-      {ListGridMovies.map((tile) => (
+      {tilesData.map((tile) => (
         <GridTile
           title={tile.title}
           subtitle={<span>by <b>{tile.author}</b></span>}
           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
         >
-          <img src={tile.img} />
         </GridTile>
       ))}
     </GridList>
