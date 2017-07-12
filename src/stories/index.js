@@ -9,6 +9,7 @@ import NewList from './NewList';
 import EditList from './EditList';
 import ListGridMovies from './GridList';
 import ColorPicker from '../elements/ColorPicker';
+import NewMovieInList from '../elements/NewMovieInList';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -26,6 +27,7 @@ storiesOf('Pages', module)
     hintTitle="Title"
     hintDescription="Description"
     buttonSave="Save"
+    buttonCancel="Cancel"
     buttonCancel="Cancel"
     />
 ))
@@ -48,6 +50,7 @@ storiesOf('Pages', module)
     />
 ));
 
+
 storiesOf('Elements', module)
 .addDecorator(story => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -65,7 +68,25 @@ storiesOf('Elements', module)
     value5="Light Green #8BC34A"
     value6="Amber #FFC107"
     />
+))
+.add('New Movie in List', () => (
+  <NewMovieInList
+    hintText="Name of new Movie"
+    buttonSave="save"
+    buttonCancel="Cancel"
+    />
 ));
+
+
+
+
+
+
+
+
+
+
+
 
 storiesOf('App', module)
 .addDecorator(story => (
