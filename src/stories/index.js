@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import '../index.css';
 import App from '../App';
@@ -13,6 +13,10 @@ import NewMovieInList from '../elements/NewMovieInList';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 storiesOf('Pages', module)
 .addDecorator(story => (
@@ -50,7 +54,6 @@ storiesOf('Pages', module)
     />
 ));
 
-
 storiesOf('Elements', module)
 .addDecorator(story => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -61,12 +64,17 @@ storiesOf('Elements', module)
 ))
 .add('Color Picker', () => (
   <ColorPicker
-    value1="Pink #E91E63"
-    value2="Deep Purple #673AB7"
-    value3="Cyan #00BCD4"
-    value4="Indigo #3F51B5"
-    value5="Light Green #8BC34A"
-    value6="Amber #FFC107"
+    selectedColor="#8BC34A"
+    items={
+      [
+        {color: "#E91E63", label: "Pink"},
+        {color: "#673AB7", label: "Deep Purple"},
+        {color: "#00BCD4", label: "Cyan"},
+        {color: "#3F51B5", label: "Indigo"},
+        {color: "#8BC34A", label: "Light Green"},
+        {color: "#FFC107", label: "Amber"},
+      ]
+    }
     />
 ))
 .add('New Movie in List', () => (
