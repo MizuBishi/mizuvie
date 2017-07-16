@@ -18,6 +18,23 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
 
+const MOVIE_LIST = {
+  title: "TV Series",
+  description: "My lovely TV Series",
+  colors: "#E91E63",
+  movies: {
+    m1: {
+      title: "Fargo",
+      viewed: false
+    },
+    m2: {
+      title: "Dexter",
+      viewed: true
+    }
+  }
+};
+
+
 storiesOf('Pages', module)
 .addDecorator(story => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -46,11 +63,9 @@ storiesOf('Pages', module)
 ))
 .add('MovieList', () => (
   <MovieList
-    movie1 = "movie1"
-    movie2 = "movie2"
-    movie3 = "movie3"
-    movie4 = "movie4"
-    movie5 = "movie5"
+    title={MOVIE_LIST.title}
+    description={MOVIE_LIST.description}
+    movies={MOVIE_LIST.movies}
     />
 ));
 
