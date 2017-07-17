@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
+
 import '../index.css';
 import App from '../App';
 
@@ -18,6 +19,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
 
+
 const MOVIE_LIST = {
   title: "TV Series",
   description: "My lovely TV Series",
@@ -33,7 +35,6 @@ const MOVIE_LIST = {
     }
   }
 };
-
 
 storiesOf('Pages', module)
 .addDecorator(story => (
@@ -99,17 +100,6 @@ storiesOf('Elements', module)
     buttonCancel="Cancel"
     />
 ));
-
-
-
-
-
-
-
-
-
-
-
 
 storiesOf('App', module)
 .addDecorator(story => (
