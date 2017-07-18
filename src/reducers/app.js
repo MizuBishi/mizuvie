@@ -22,28 +22,29 @@ const INITIAL_STATE={
           title: "The Knick",
           viewed: true
         }
-      },
-      b: {
-        title: "Documentaries",
-        description: " ",
-        colors: "#00BCD4",
-        movies: {
-          m1: {
-            title: "Fritzl",
-            viewed: false
-          },
-          m2: {
-            title: "Auschwitz",
-            viewed: true
-          }
+      }
+    },
+    b: {
+      title: "Documentaries",
+      description: " ",
+      colors: "#00BCD4",
+      movies: {
+        m1: {
+          title: "Fritzl",
+          viewed: false
+        },
+        m2: {
+          title: "Auschwitz",
+          viewed: true
         }
       }
     }
   }
-};
+}
 
-  const reducer = (state = INITIAL_STATE, action) => {
-    return state;
-  }
 
-  export default reducer;
+const reducer = (state = INITIAL_STATE, action) => {
+  return state;
+}
+
+export default reducer;

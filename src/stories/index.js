@@ -4,7 +4,7 @@ import { storiesOf, action, linkTo } from '@kadira/storybook';
 import '../index.css';
 import App from '../App';
 
-import CardExampleExpandable from './Card';
+import OverviewList from './OverviewList';
 import MovieList from './MovieList';
 import NewList from './NewList';
 import EditList from './EditList';
@@ -32,6 +32,19 @@ const MOVIE_LIST = {
     m2: {
       title: "Dexter",
       viewed: true
+    }
+  }
+};
+
+const OVERVIEW_LIST = {
+  lists: {
+    l1: {
+      title: "Dokus",
+      description: "7/10"
+    },
+    l2: {
+      title: "TV Series",
+      description: "0/3"
     }
   }
 };
@@ -132,9 +145,10 @@ storiesOf('Card', module)
 .add('to Storybook', () => (
   <div className="row">
     <div className="col-xs-4">
-      <CardExampleExpandable
-        title="Without Avatar"
-        subtitle="geile wurst"
+      <OverviewList
+        title={OVERVIEW_LIST.title}
+        description={OVERVIEW_LIST.description}
+        lists={OVERVIEW_LIST.lists}
         />
     </div>
   </div>

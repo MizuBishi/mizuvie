@@ -6,6 +6,7 @@ import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 
+
 const styles = {
   root: {
     display: 'flex',
@@ -18,19 +19,6 @@ const styles = {
     overflowY: 'auto',
   },
 };
-
-const ListGridMovies = (props) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-xs-8">
-        <GridList
-          title ={props.title1}
-          author ={props.author1}
-        />
-      </div>
-    </div>
-  </div>
-);
 
 const tilesData = [
   {
@@ -51,13 +39,11 @@ const GridListExampleSimple = () => (
       cellHeight={180}
       style={styles.gridList}
     >
-      <Subheader>December</Subheader>
+      <Subheader>My Movie List's</Subheader>
       {tilesData.map((tile) => (
         <GridTile
           title={tile.title}
-          subtitle={<span>by <b>{tile.author}</b></span>}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-        >
+          subtitle={<span>by <b>{tile.author}</b></span>}        >
         </GridTile>
       ))}
     </GridList>

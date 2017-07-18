@@ -14,7 +14,10 @@ import reducer from './reducers/app';
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-let store = createStore(reducer);
+let store = createStore(
+  reducer,
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -20,14 +20,15 @@ const MovieList = (props) => (
         <List>
           {
             Object.values(props.movies).map((movie, index) => (
-              <ListItem primaryText={movie.title} key={index}
+              <ListItem
+                primaryText={movie.title}
+                key={index}
                 leftCheckbox={<Checkbox checked={movie.viewed} />}
                 rightIcon={<Delete />}
                 />
             ))
           }
         </List>
-
       </div>
       <div className="row">
         <FloatingActionButton>
