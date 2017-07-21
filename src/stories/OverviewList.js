@@ -24,6 +24,7 @@ const OverviewList = (props) => (
                 textStyle={noPadding}
                 title={allList.title}
                 subtitle={allList.description}
+                colors={allList.colors}
                 />
             </Card>
           </div>

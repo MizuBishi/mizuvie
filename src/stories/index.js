@@ -40,11 +40,13 @@ const OVERVIEW_LIST = {
   lists: {
     l1: {
       title: "Dokus",
-      description: "7/10"
+      description: "7/10",
+      colors: "#E91E63",
     },
     l2: {
       title: "TV Series",
-      description: "0/3"
+      description: "0/3",
+      colors: "#E91E63",
     }
   }
 };
@@ -81,6 +83,18 @@ storiesOf('Pages', module)
     description={MOVIE_LIST.description}
     movies={MOVIE_LIST.movies}
     />
+))
+.add('Overview List', () => (
+  <div className="row">
+    <div className="col-xs-4">
+      <OverviewList
+        title={OVERVIEW_LIST.title}
+        description={OVERVIEW_LIST.description}
+        colors={OVERVIEW_LIST.colors}
+        lists={OVERVIEW_LIST.lists}
+        />
+    </div>
+  </div>
 ));
 
 storiesOf('Elements', module)
@@ -124,32 +138,13 @@ storiesOf('App', module)
 ))
 .add('Grid List', () => (
   <ListGridMovies
-    title1 = "movie1"
-    author1 = "author1"
+    title={OVERVIEW_LIST.title}
+    subtitle={OVERVIEW_LIST.subtitle}
+    lists={OVERVIEW_LIST.lists}
     />
 ));
 
 storiesOf('App', module)
 .add('default view', () => (
   <App />
-));
-
-storiesOf('Card', module)
-.addDecorator(story => (
-  <MuiThemeProvider muiTheme={getMuiTheme()}>
-    <div className="muiContainer">
-      {story()}
-    </div>
-  </MuiThemeProvider>
-))
-.add('to Storybook', () => (
-  <div className="row">
-    <div className="col-xs-4">
-      <OverviewList
-        title={OVERVIEW_LIST.title}
-        description={OVERVIEW_LIST.description}
-        lists={OVERVIEW_LIST.lists}
-        />
-    </div>
-  </div>
 ));

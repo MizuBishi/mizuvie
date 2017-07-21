@@ -1,12 +1,12 @@
 import React from 'react';
-import OverviewList from '../stories/OverviewList';
+import OverviewGridList from '../stories/GridList';
 import { connect } from 'react-redux';
 
 const OverviewListContainer = (props) => (
   props.hidden ?
     null
   :
-    <OverviewList
+    <OverviewGridList
     lists={props.lists}
     />
 )

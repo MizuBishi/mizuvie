@@ -1,10 +1,6 @@
 import React from 'react';
 
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-
 
 
 const styles = {
@@ -15,39 +11,32 @@ const styles = {
   },
   gridList: {
     width: 500,
-    height: 450,
     overflowY: 'auto',
+    // margin: '5px'
   },
 };
 
-const tilesData = [
-  {
-    img: 'images/grid-list/00-52-29-429_640.jpg',
-    title: 'Breakfast',
-    author: 'jill111',
-  },
-  {
-    img: 'images/grid-list/burger-827309_640.jpg',
-    title: 'Tasty burger',
-    author: 'pashminu',
-  },
-];
-
-const GridListExampleSimple = () => (
+const OverviewGridList = (props) => (
   <div style={styles.root}>
-    <GridList
-      cellHeight={180}
-      style={styles.gridList}
-    >
-      <Subheader>My Movie List's</Subheader>
-      {tilesData.map((tile) => (
-        <GridTile
-          title={tile.title}
-          subtitle={<span>by <b>{tile.author}</b></span>}        >
-        </GridTile>
-      ))}
-    </GridList>
-  </div>
-);
+    <div>
+      <GridList style={styles.gridList} cellHeight={280}>
+        {
+          Object.values(props.lists).map((allList, index) => (
+            <GridTile style={{background:allList.colors}}
+              title={allList.title}
+              key={index}
+              subtitle={<span>Viewed: <b>{Object.values(allList.movies).reduce
+                ((acc, movie) => acc + movie.viewed, 0)}</b>/
+                {Object.keys(allList.movies).length}</span>}
+                >
+                <div>
+                </div>
+              </GridTile>
+            ))
+          }
+        </GridList>
+      </div>
+    </div>
+  );
 
-export default GridListExampleSimple;
+  export default OverviewGridList;
