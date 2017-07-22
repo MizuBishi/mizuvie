@@ -2,18 +2,20 @@ import React from 'react';
 import OverviewGridList from '../stories/GridList';
 import { connect } from 'react-redux';
 
-const OverviewListContainer = (props) => (
-  props.hidden ?
-    null
-  :
-    <OverviewGridList
-    lists={props.lists}
-    />
-)
+const OverviewListContainer = (props) => {
+  if (props.shown) {
+    return   <OverviewGridList
+      lists={props.lists}
+      />
+  } else {
+    return null;
+  }
+}
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hidden: state.app.page !== 'overview',
+    shown: state.app.page == 'overview',
     lists: state.lists
   }
 }

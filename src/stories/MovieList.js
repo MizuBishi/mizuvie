@@ -31,7 +31,7 @@ const MovieList = (props) => (
         </List>
       </div>
       <div className="row">
-        <FloatingActionButton>
+        <FloatingActionButton style={{float: 'right'}}>
           <ContentAdd />
         </FloatingActionButton>
       </div>

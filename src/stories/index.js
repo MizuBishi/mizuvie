@@ -6,7 +6,7 @@ import App from '../App';
 
 import OverviewList from './OverviewList';
 import MovieList from './MovieList';
-import NewList from './NewList';
+import NewMovieList from './NewMovieList';
 import EditList from './EditList';
 import ListGridMovies from './GridList';
 import ColorPicker from '../elements/ColorPicker';
@@ -51,6 +51,7 @@ const OVERVIEW_LIST = {
   }
 };
 
+
 storiesOf('Pages', module)
 .addDecorator(story => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -59,12 +60,11 @@ storiesOf('Pages', module)
     </div>
   </MuiThemeProvider>
 ))
-.add('New List', () => (
-  <NewList
+.add('New Movie List', () => (
+  <NewMovieList
     hintTitle="Title"
     hintDescription="Description"
     buttonSave="Save"
-    buttonCancel="Cancel"
     buttonCancel="Cancel"
     />
 ))
@@ -75,13 +75,6 @@ storiesOf('Pages', module)
     buttonSave="Save"
     buttonCancel="Cancel"
     buttonDelete="Delete"
-    />
-))
-.add('MovieList', () => (
-  <MovieList
-    title={MOVIE_LIST.title}
-    description={MOVIE_LIST.description}
-    movies={MOVIE_LIST.movies}
     />
 ))
 .add('Overview List', () => (
@@ -108,16 +101,6 @@ storiesOf('Elements', module)
 .add('Color Picker', () => (
   <ColorPicker
     selectedColor="#8BC34A"
-    items={
-      [
-        {color: "#E91E63", label: "Pink"},
-        {color: "#673AB7", label: "Deep Purple"},
-        {color: "#00BCD4", label: "Cyan"},
-        {color: "#3F51B5", label: "Indigo"},
-        {color: "#8BC34A", label: "Light Green"},
-        {color: "#FFC107", label: "Amber"},
-      ]
-    }
     />
 ))
 .add('New Movie in List', () => (

@@ -2,16 +2,23 @@ import React from 'react';
 import MovieList from '../stories/MovieList';
 import { connect } from 'react-redux';
 
-const MovieListContainer = (props) => (
-  <MovieList
-    title={props.movieList.title}
-    description={props.movieList.description}
-    movies={props.movieList.movies}
-    />
-)
+const MovieListContainer = (props) => {
+  if (props.shown) {
+    return     <MovieList
+      title={props.movieList.title}
+      description={props.movieList.description}
+      movies={props.movieList.movies}
+      />
+  } else {
+    return null;
+  }
+}
+
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    shown: state.app.page == 'list',
     movieList: state.lists[state.app.currentList]
   }
 }

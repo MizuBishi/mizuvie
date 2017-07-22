@@ -1,8 +1,13 @@
 const INITIAL_STATE={
   app: {
-    page: "overview",
+    // can be overview or list
+    page: "list",
     currentList: "a",
-    newMovie: false
+    // new movie text field ar shown or not
+    newMovie: false,
+    newMovieTitle: "New Movie",
+    newMovieDescription: "New Description",
+    newMovieColor: "#00BCD4"
   },
   lists: {
     a: {
