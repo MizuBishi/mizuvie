@@ -1,6 +1,7 @@
 import React from 'react';
-import OverviewGridList from '../stories/GridList';
+import OverviewGridList from '../components/OverviewGridList';
 import { connect } from 'react-redux';
+
 
 const OverviewListContainer = (props) => {
   if (props.shown) {
@@ -15,7 +16,7 @@ const OverviewListContainer = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    shown: state.app.page == 'overview',
+    shown: state.app.page === 'overview',
     lists: state.lists
   }
 }

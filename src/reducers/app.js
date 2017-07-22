@@ -1,4 +1,4 @@
-const INITIAL_STATE={
+export const INITIAL_STATE={
   app: {
     // can be overview or list
     page: "list",

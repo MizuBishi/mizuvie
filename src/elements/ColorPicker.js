@@ -1,5 +1,4 @@
 import React from 'react';
-import {storiesOf} from '@kadira/storybook';
 
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';

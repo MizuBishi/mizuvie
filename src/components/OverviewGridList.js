@@ -33,8 +33,8 @@ const OverviewGridList = (props) => (
               <GridTile style={{background:allList.colors}}
                 title={allList.title}
                 key={index}
-                subtitle={<span>Viewed: <b>{Object.values(allList.movies).reduce
-                  ((acc, movie) => acc + movie.viewed, 0)}</b>/
+                subtitle={<span>Viewed: <b>{Object.values(allList.movies)
+                  .reduce((acc, movie) => acc + movie.viewed, 0)}</b>/
                   {Object.keys(allList.movies).length}</span>}
                   >
                   <div>

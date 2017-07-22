@@ -3,12 +3,12 @@ import { storiesOf, action, linkTo } from '@kadira/storybook';
 
 import '../index.css';
 import App from '../App';
+import {INITIAL_STATE} from '../reducers/app';
 
-import OverviewList from './OverviewList';
-import MovieList from './MovieList';
-import NewMovieList from './NewMovieList';
-import EditList from './EditList';
-import ListGridMovies from './GridList';
+import OverviewGridList from '../components/OverviewGridList';
+import MovieList from '../components/MovieList';
+import NewMovieList from '../components/NewMovieList';
+import EditList from '../components/EditList';
 import ColorPicker from '../elements/ColorPicker';
 import NewMovieInList from '../elements/NewMovieInList';
 
@@ -36,22 +36,6 @@ const MOVIE_LIST = {
   }
 };
 
-const OVERVIEW_LIST = {
-  lists: {
-    l1: {
-      title: "Dokus",
-      description: "7/10",
-      colors: "#E91E63",
-    },
-    l2: {
-      title: "TV Series",
-      description: "0/3",
-      colors: "#E91E63",
-    }
-  }
-};
-
-
 storiesOf('Pages', module)
 .addDecorator(story => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -60,7 +44,14 @@ storiesOf('Pages', module)
     </div>
   </MuiThemeProvider>
 ))
-.add('New Movie List', () => (
+.add('MovieList', () => (
+  <MovieList
+    title={INITIAL_STATE.lists.a.title}
+    description={INITIAL_STATE.lists.a.description}
+    movies={INITIAL_STATE.lists.a.movies}
+    />
+))
+.add('NewMovieList', () => (
   <NewMovieList
     hintTitle="Title"
     hintDescription="Description"
@@ -68,7 +59,7 @@ storiesOf('Pages', module)
     buttonCancel="Cancel"
     />
 ))
-.add('Edit List', () => (
+.add('EditList', () => (
   <EditList
     hintTitle="Title"
     hintDescription="Description"
@@ -77,14 +68,11 @@ storiesOf('Pages', module)
     buttonDelete="Delete"
     />
 ))
-.add('Overview List', () => (
+.add('OverviewGridList', () => (
   <div className="row">
     <div className="col-xs-4">
-      <OverviewList
-        title={OVERVIEW_LIST.title}
-        description={OVERVIEW_LIST.description}
-        colors={OVERVIEW_LIST.colors}
-        lists={OVERVIEW_LIST.lists}
+      <OverviewGridList
+        lists={INITIAL_STATE.lists}
         />
     </div>
   </div>
@@ -109,25 +97,4 @@ storiesOf('Elements', module)
     buttonSave="save"
     buttonCancel="Cancel"
     />
-));
-
-storiesOf('App', module)
-.addDecorator(story => (
-  <MuiThemeProvider muiTheme={getMuiTheme()}>
-    <div className="muiContainer">
-      {story()}
-    </div>
-  </MuiThemeProvider>
-))
-.add('Grid List', () => (
-  <ListGridMovies
-    title={OVERVIEW_LIST.title}
-    subtitle={OVERVIEW_LIST.subtitle}
-    lists={OVERVIEW_LIST.lists}
-    />
-));
-
-storiesOf('App', module)
-.add('default view', () => (
-  <App />
 ));

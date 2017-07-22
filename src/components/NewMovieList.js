@@ -23,7 +23,7 @@ const NewMovieList = (props) => (
     <div className="row">
       <TextField
         hintText="Description"
-        value ={props.description}
+        value={props.description}
         />
     </div>
     <div className="row">
@@ -33,7 +33,7 @@ const NewMovieList = (props) => (
     </div>
     <div className="row">
       <RaisedButton
-        label= "Save" primary={true} style={style}/>
+        label="Save" primary={true} style={style}/>
       <RaisedButton
         label="Cancel" primary={true} style={style}/>
     </div>
