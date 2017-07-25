@@ -14,22 +14,16 @@ const COLORS = [
 ];
 
 const ColorPicker = (props) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-xs-12">
-        <DropDownMenu
-          value={props.selectedColor}>
-          {(() => (COLORS.map((item, i) => (
-            <MenuItem
-              key={i}
-              value={item.color}
-              primaryText={item.label}
-              />)
-            )))()}
-          </DropDownMenu>
-        </div>
-      </div>
-    </div>
+  <DropDownMenu
+    value={props.selectedColor}>
+    {(() => (COLORS.map((item, i) => (
+      <MenuItem
+        key={i}
+        value={item.color}
+        primaryText={item.label}
+        />)
+      )))()}
+    </DropDownMenu>
   );
 
   export default ColorPicker;

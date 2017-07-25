@@ -1,9 +1,6 @@
 import React from 'react';
-// import {storiesOf} from '@kadira/storybook';
-// import Avatar from 'material-ui/Avatar';
 
 import {List, ListItem} from 'material-ui/List';
-// import Subheader from 'material-ui/Subheader';
 import Checkbox from 'material-ui/Checkbox';
 import Delete from 'material-ui/svg-icons/action/delete';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -30,9 +27,11 @@ const MovieList = (props) => (
         </List>
       </div>
       <div className="row">
-        <FloatingActionButton style={{float: 'right'}}>
-          <ContentAdd />
-        </FloatingActionButton>
+        <div className="col-xs-12">
+          <FloatingActionButton style={{float: 'right', margin: '10px'}}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     </div>
   </div>

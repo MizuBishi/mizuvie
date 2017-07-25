@@ -55,17 +55,13 @@ storiesOf('Pages', module)
   <NewMovieList
     hintTitle="Title"
     hintDescription="Description"
-    buttonSave="Save"
-    buttonCancel="Cancel"
     />
 ))
 .add('EditMovieList', () => (
   <EditMovieList
+    title='title'
     hintTitle="Title"
     hintDescription="Description"
-    buttonSave="Save"
-    buttonCancel="Cancel"
-    buttonDelete="Delete"
     />
 ))
 .add('OverviewGridList', () => (
@@ -94,7 +90,5 @@ storiesOf('Elements', module)
 .add('New Movie in List', () => (
   <NewMovieInList
     hintText="Name of new Movie"
-    buttonSave="save"
-    buttonCancel="Cancel"
     />
 ));

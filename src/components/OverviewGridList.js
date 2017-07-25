@@ -14,18 +14,18 @@ const styles = {
   gridList: {
     width: 500,
     overflowY: 'auto',
-    // margin: '5px'
+    margin: '10px'
   },
 };
 
 const OverviewGridList = (props) => (
   <div className="container">
     <div className="row">
-      <h2>Mizuvie Movies</h2>
+      <h2 style={{marginLeft: '20px'}}>Mizuvie Movies</h2>
     </div>
     <div className="row">
       <div className="col-xs-12" style={styles.root}>
-        <GridList style={styles.gridList} cellHeight={280}>
+        <GridList style={styles.gridList} cellHeight={180}>
           {
             Object.values(props.lists).map((allList, index) => (
               <GridTile style={{background:allList.colors}}
@@ -44,9 +44,11 @@ const OverviewGridList = (props) => (
         </div>
       </div>
       <div className="row">
-        <FloatingActionButton style={{float: 'right'}}>
-          <ContentAdd />
-        </FloatingActionButton>
+        <div className="col-xs-12">
+          <FloatingActionButton style={{float: 'right', margin: '10px'}}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     </div>
   );
