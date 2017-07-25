@@ -3,8 +3,11 @@ export const INITIAL_STATE={
     // can be overview or list
     page: "list",
     currentList: "a",
+
     // new movie text field ar shown or not
     newMovie: false,
+    editMovie: true,
+
     newMovieTitle: "New Movie",
     newMovieDescription: "New Description",
     newMovieColor: "#00BCD4"
