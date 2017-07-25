@@ -8,7 +8,7 @@ import {INITIAL_STATE} from '../reducers/app';
 import OverviewGridList from '../components/OverviewGridList';
 import MovieList from '../components/MovieList';
 import NewMovieList from '../components/NewMovieList';
-import EditList from '../components/EditList';
+import EditMovieList from '../components/EditMovieList';
 import ColorPicker from '../elements/ColorPicker';
 import NewMovieInList from '../elements/NewMovieInList';
 
@@ -59,8 +59,8 @@ storiesOf('Pages', module)
     buttonCancel="Cancel"
     />
 ))
-.add('EditList', () => (
-  <EditList
+.add('EditMovieList', () => (
+  <EditMovieList
     hintTitle="Title"
     hintDescription="Description"
     buttonSave="Save"

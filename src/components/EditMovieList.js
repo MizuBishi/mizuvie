@@ -8,7 +8,7 @@ const style = {
   margin: 12,
 };
 
-const EditList = (props) => (
+const EditMovieList = (props) => (
   <div className="container">
     <div className="row">
       <div className="col-xs-6">
@@ -40,4 +40,4 @@ const EditList = (props) => (
   </div>
 );
 
-export default EditList;
+export default EditMovieList;
