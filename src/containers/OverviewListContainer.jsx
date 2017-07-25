@@ -1,6 +1,7 @@
 import React from 'react';
-import OverviewGridList from '../components/OverviewGridList';
 import { connect } from 'react-redux';
+
+import OverviewGridList from '../components/OverviewGridList';
 
 
 const OverviewListContainer = (props) => {

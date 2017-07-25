@@ -3,6 +3,7 @@ import React from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 
+
 const COLORS = [
   {color: "#E91E63", label: "Pink"},
   {color: "#673AB7", label: "Deep Purple"},

@@ -1,6 +1,8 @@
 import React from 'react';
-import MovieList from '../components/MovieList';
 import { connect } from 'react-redux';
+
+import MovieList from '../components/MovieList';
+
 
 const MovieListContainer = (props) => {
   if (props.shown) {

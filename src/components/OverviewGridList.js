@@ -5,7 +5,6 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 
-
 const styles = {
   root: {
     display: 'flex',
@@ -24,8 +23,7 @@ const OverviewGridList = (props) => (
     <div className="row">
       <h2>Mizuvie Movies</h2>
     </div>
-      <div className="row">
-
+    <div className="row">
       <div className="col-xs-12" style={styles.root}>
         <GridList style={styles.gridList} cellHeight={280}>
           {
@@ -45,12 +43,12 @@ const OverviewGridList = (props) => (
           </GridList>
         </div>
       </div>
-        <div className="row">
-          <FloatingActionButton style={{float: 'right'}}>
-            <ContentAdd />
-          </FloatingActionButton>
-        </div>
+      <div className="row">
+        <FloatingActionButton style={{float: 'right'}}>
+          <ContentAdd />
+        </FloatingActionButton>
       </div>
-    );
+    </div>
+  );
 
-    export default OverviewGridList;
+  export default OverviewGridList;

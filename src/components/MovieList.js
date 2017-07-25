@@ -10,7 +10,6 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 
-
 const MovieList = (props) => (
   <div className="container">
     <div className="row">

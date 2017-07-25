@@ -39,4 +39,5 @@ const NewMovieList = (props) => (
     </div>
   </div>
 );
+
 export default NewMovieList;
