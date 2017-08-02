@@ -36,15 +36,15 @@ const OverviewGridList = (props) => (
       <div className="col-xs-12" style={styles.root}>
         <GridList style={styles.gridList} cellHeight={180}>
           {
-            Object.values(props.lists).map((allList, index) => (
-              <GridTile style={{background:allList.colors}}
-                title={allList.title}
-                key={index}
-                subtitle={<span>Viewed: <b>{numberOfViewedMovies(allList)}</b>/
-                {numberOfMovies(allList)}</span>}
+            Object.keys(props.lists).map((key, index) => (
+              <GridTile style={{background:props.lists[key].colors}}
+                title={props.lists[key].title}
+                key={key}
+                subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}</b>/{numberOfMovies(props.lists[key])}</span>}
+                onClick={() => props.onTileClick(key)}
                 >
                 <div>
-                  {numberOfMovies(allList) === numberOfViewedMovies(allList) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
+                  {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
                 </div>
               </GridTile>
             ))

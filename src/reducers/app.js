@@ -1,3 +1,5 @@
+import { SHOW_LIST } from '../actions/app'
+
 export const INITIAL_STATE={
   app: {
     // can be overview or list or new or edit
@@ -90,6 +92,27 @@ export const INITIAL_STATE={
 
 
 const reducer = (state = INITIAL_STATE, action) => {
+
+  if (action.type === SHOW_LIST) {
+
+    // state.app.page = 'list';
+    // state.app.currentList = action.list;
+    // return state;
+
+    // above code does NOT work.
+    // below code is equivalent.
+
+    console.log('action', action);
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'list',
+        currentList: action.list
+      }
+    };
+  }
+
   return state;
 }
 
