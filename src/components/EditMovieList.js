@@ -45,4 +45,10 @@ const EditMovieList = (props) => (
   </div>
 );
 
+EditMovieList.propTypes = {
+  title: React.PropTypes.string,
+  description: React.PropTypes.string,
+  selectedColor: React.PropTypes.string,
+};
+
 export default EditMovieList;

@@ -1,7 +1,7 @@
 export const INITIAL_STATE={
   app: {
     // can be overview or list
-    page: "list",
+    page: "overview",
     currentList: "a",
 
     // new movie text field ar shown or not

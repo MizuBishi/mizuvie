@@ -3,6 +3,7 @@ import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import Done from 'material-ui/svg-icons/action/done';
 
 
 const styles = {
@@ -18,6 +19,14 @@ const styles = {
   },
 };
 
+const numberOfMovies = (allList) => {
+  return Object.keys(allList.movies).length;
+}
+
+const numberOfViewedMovies = (allList) => {
+  return Object.values(allList.movies).reduce((acc, movie) => acc + movie.viewed, 0);
+}
+
 const OverviewGridList = (props) => (
   <div className="container">
     <div className="row">
@@ -31,26 +40,33 @@ const OverviewGridList = (props) => (
               <GridTile style={{background:allList.colors}}
                 title={allList.title}
                 key={index}
-                subtitle={<span>Viewed: <b>{Object.values(allList.movies)
-                  .reduce((acc, movie) => acc + movie.viewed, 0)}</b>/
-                  {Object.keys(allList.movies).length}</span>}
-                  >
-                  <div>
-                  </div>
-                </GridTile>
-              ))
-            }
-          </GridList>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-12">
-          <FloatingActionButton style={{float: 'right', margin: '10px'}}>
-            <ContentAdd />
-          </FloatingActionButton>
-        </div>
+                subtitle={<span>Viewed: <b>{numberOfViewedMovies(allList)}</b>/
+                {numberOfMovies(allList)}</span>}
+                >
+                <div>
+                  {numberOfMovies(allList) === numberOfViewedMovies(allList) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
+                </div>
+              </GridTile>
+            ))
+          }
+        </GridList>
       </div>
     </div>
-  );
+    <div className="row">
+      <div className="col-xs-12">
+        <FloatingActionButton style={{float: 'right', margin: '10px'}}>
+          <ContentAdd />
+        </FloatingActionButton>
+      </div>
+    </div>
+  </div>
+);
 
-  export default OverviewGridList;
+OverviewGridList.propTypes = {
+  lists: React.PropTypes.shape({
+    title: React.PropTypes.string,
+    subtitle: React.PropTypes.number,
+  })
+};
+
+export default OverviewGridList;

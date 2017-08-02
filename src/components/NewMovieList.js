@@ -33,17 +33,23 @@ const NewMovieList = (props) => (
       </div>
     </div>
     <div className="row" style={{marginLeft: '-20px'}}>
-        <ColorPicker
-          selectedColor={props.selectedColor}
-          />
+      <ColorPicker
+        selectedColor={props.selectedColor}
+        />
     </div>
     <div className="row">
-        <RaisedButton
-          label="Save" primary={true} style={style}/>
-        <RaisedButton
-          label="Cancel" primary={true} style={style}/>
+      <RaisedButton
+        label="Save" primary={true} style={style}/>
+      <RaisedButton
+        label="Cancel" primary={true} style={style}/>
     </div>
   </div>
 );
+
+NewMovieList.propTypes = {
+  title: React.PropTypes.string,
+  description: React.PropTypes.string,
+  selectedColor: React.PropTypes.string,
+};
 
 export default NewMovieList;
