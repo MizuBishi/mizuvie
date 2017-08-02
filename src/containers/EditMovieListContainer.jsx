@@ -18,7 +18,7 @@ const EditMovieListContainer = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    shown: state.app.page === 'list',
+    shown: state.app.page === 'edit',
     movieList: state.lists[state.app.currentList]
   }
 }

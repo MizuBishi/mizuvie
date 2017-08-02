@@ -5,7 +5,7 @@ import NewMovieList from '../components/NewMovieList';
 
 
 const NewMovieListContainer = (props) => {
-  if (props.newMovie) {
+  if (props.shown) {
     return <NewMovieList
       title={props.newMovieTitle}
       description={props.newMovieDescription}
@@ -18,6 +18,7 @@ const NewMovieListContainer = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    shown: state.app.page === 'new',
     newMovie: state.app.newMovie,
     newMovieTitle: state.app.newMovieTitle,
     newMovieDescription: state.app.newMovieDescription,
