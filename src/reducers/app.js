@@ -1,11 +1,12 @@
 import { SHOW_LIST } from '../actions/app'
 import { NEW_LIST } from '../actions/app'
+import { EDIT_LIST } from '../actions/app'
 
 
 export const INITIAL_STATE={
   app: {
     // can be overview or list or new or edit
-    page: 'overview',
+    page: 'list',
     currentList: 'b',
 
     // new movie text field ar shown or not
@@ -121,7 +122,16 @@ const reducer = (state = INITIAL_STATE, action) => {
       }
     };
   }
-
+  if (action.type === EDIT_LIST) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'edit',
+        currentList: action.list
+      }
+    };
+  }
   return state;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { EditList } from '../actions/app'
 import EditMovieList from '../components/EditMovieList';
 
 

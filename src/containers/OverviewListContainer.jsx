@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { ShowList } from '../actions/app'
 import { NewList } from '../actions/app'
+import { EditList } from '../actions/app'
 import OverviewGridList from '../components/OverviewGridList';
 
 
@@ -12,6 +13,7 @@ const OverviewListContainer = (props) => {
       lists={props.lists}
       onTileClick={props.onTileClick}
       onListClick={props.onListClick}
+      onEditListClick={props.onEditListClick}
       />
   } else {
     return null;
@@ -29,7 +31,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onTileClick: list => dispatch(ShowList(list)),
-    onListClick: () => dispatch(NewList())
+    onListClick: () => dispatch(NewList()),
+    onEditListClick: list => dispatch(EditList(list)),
   }
 }
 

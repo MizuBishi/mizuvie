@@ -12,19 +12,18 @@ const style = {
 const NewMovieInList = (props) => (
   <div className="container">
     <div className="row">
-      <div className="col-xs-12">
-        <TextField
-          hintText={props.hintText}
-          />
-      </div>
-      <div className="row">
-        <RaisedButton
-          label={props.buttonSave} primary={true} style={style}/>
-        <RaisedButton
-          label={props.buttonCancel} primary={true} style={style}/>
-        </div>
-      </div>
+      <div className="col-xs-12"></div>
+      <TextField
+        hintText={props.hintText}
+        />
     </div>
-  );
+    <div className="row">
+      <RaisedButton
+        label='Save' primary={true} style={style}/>
+      <RaisedButton
+        label='Cancel' primary={true} style={style}/>
+    </div>
+  </div>
+);
 
-  export default NewMovieInList;
+export default NewMovieInList;

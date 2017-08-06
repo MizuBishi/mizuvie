@@ -4,7 +4,10 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Done from 'material-ui/svg-icons/action/done';
+import Edit from 'material-ui/svg-icons/editor/mode-edit';
 import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
 
 
 const styles = {
@@ -54,6 +57,15 @@ const OverviewGridList = (props) => (
                 >
                 <div>
                   {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
+                  <IconButton>
+                    <Edit
+                      style={{color: 'white', margin: '5px'}}
+                      onClick={e => {
+                        props.onEditListClick(key);
+                        e.stopPropagation();
+                      }}
+                      />
+                  </IconButton>
                 </div>
               </GridTile>
             ))
@@ -63,7 +75,9 @@ const OverviewGridList = (props) => (
     </div>
     <div className="row">
       <div className="col-xs-12">
-        <FloatingActionButton style={styles.button} onClick={() => props.onListClick()}>
+        <FloatingActionButton
+          style={styles.button}
+          onClick={() => props.onListClick()}>
           <ContentAdd
             />
         </FloatingActionButton>
