@@ -1,4 +1,5 @@
 import React from 'react';
+import NewMovieInList from '../elements/NewMovieInList';
 
 import {List, ListItem} from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
@@ -39,9 +40,12 @@ const MovieList = (props) => (
           ))
         }
       </List>
+      {props.newMovie ? <NewMovieInList /> : null}
       <div className="row">
         <div className="col-xs-12">
-          <FloatingActionButton style={styles.button}>
+          <FloatingActionButton
+            style={styles.button}
+            onClick={() => props.onNewMovieClick()}>
             <ContentAdd
               />
           </FloatingActionButton>
