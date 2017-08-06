@@ -1,4 +1,6 @@
 import { SHOW_LIST } from '../actions/app'
+import { NEW_LIST } from '../actions/app'
+
 
 export const INITIAL_STATE={
   app: {
@@ -92,7 +94,6 @@ export const INITIAL_STATE={
 
 
 const reducer = (state = INITIAL_STATE, action) => {
-
   if (action.type === SHOW_LIST) {
 
     // state.app.page = 'list';
@@ -102,13 +103,21 @@ const reducer = (state = INITIAL_STATE, action) => {
     // above code does NOT work.
     // below code is equivalent.
 
-    console.log('action', action);
     return {
       ...state,
       app: {
         ...state.app,
         page: 'list',
         currentList: action.list
+      }
+    };
+  }
+  if (action.type === NEW_LIST) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'new',
       }
     };
   }

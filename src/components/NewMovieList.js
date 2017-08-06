@@ -3,19 +3,26 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import ColorPicker from '../elements/ColorPicker';
+import AppBar from 'material-ui/AppBar';
 
 
-const style = {
-  margin: 12,
+const styles = {
+  text: {
+    fontWeight: '100',
+  },
+  button: {
+    marginRight: 20,
+    float: 'right',
+  },
 };
 
 const NewMovieList = (props) => (
   <div className="container">
     <div className="row">
-      <div className="col-xs-12">
-        <h3>New List</h3>
+        <AppBar
+          title='New List' titleStyle={styles.text}
+          />
       </div>
-    </div>
     <div className="row">
       <div className="col-xs-12">
         <TextField
@@ -39,9 +46,9 @@ const NewMovieList = (props) => (
     </div>
     <div className="row">
       <RaisedButton
-        label="Save" primary={true} style={style}/>
+        label="Save" primary={true} style={styles.button}/>
       <RaisedButton
-        label="Cancel" primary={true} style={style}/>
+        label="Cancel" primary={true} style={styles.button}/>
     </div>
   </div>
 );

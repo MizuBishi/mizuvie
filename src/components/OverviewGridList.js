@@ -4,18 +4,25 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Done from 'material-ui/svg-icons/action/done';
+import AppBar from 'material-ui/AppBar';
 
 
 const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
   },
   gridList: {
     width: 500,
     overflowY: 'auto',
-    margin: '10px'
+    margin: '5px'
+  },
+  text: {
+    fontWeight: '100',
+  },
+  button: {
+    marginRight: 20,
+    float: 'right',
   },
 };
 
@@ -28,9 +35,11 @@ const numberOfViewedMovies = (allList) => {
 }
 
 const OverviewGridList = (props) => (
-  <div className="container">
+  <div>
     <div className="row">
-      <h2 style={{marginLeft: '20px'}}>Mizuvie Movies</h2>
+      <AppBar titleStyle={styles.text}
+        title="Mizuvie Movie's"
+        />
     </div>
     <div className="row">
       <div className="col-xs-12" style={styles.root}>
@@ -54,8 +63,9 @@ const OverviewGridList = (props) => (
     </div>
     <div className="row">
       <div className="col-xs-12">
-        <FloatingActionButton style={{float: 'right', margin: '10px'}}>
-          <ContentAdd />
+        <FloatingActionButton style={styles.button} onClick={() => props.onListClick()}>
+          <ContentAdd
+            />
         </FloatingActionButton>
       </div>
     </div>
