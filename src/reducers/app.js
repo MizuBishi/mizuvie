@@ -8,7 +8,7 @@ import { SET_NEW_MOVIE_NAME } from '../actions/app'
 
 export const INITIAL_STATE={
   app: {
-    // can be overview or list or new or edit
+    // can be overview, list, new or edit
     page: 'list',
     currentList: 'b',
     newMovie: false,

@@ -5,9 +5,9 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Done from 'material-ui/svg-icons/action/done';
 import Edit from 'material-ui/svg-icons/editor/mode-edit';
-import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
+
+import AppBarHeader from '../elements/AppBarHeader';
 
 
 const styles = {
@@ -39,48 +39,48 @@ const numberOfViewedMovies = (allList) => {
 
 const OverviewGridList = (props) => (
   <div>
-    <div className="row">
-      <AppBar titleStyle={styles.text}
-        title="Mizuvie Movie's"
-        />
-    </div>
-    <div className="row">
-      <div className="col-xs-12" style={styles.root}>
-        <GridList style={styles.gridList} cellHeight={180}>
-          {
-            Object.keys(props.lists).map((key, index) => (
-              <GridTile style={{background:props.lists[key].colors}}
-                title={props.lists[key].title}
-                key={key}
-                subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}</b>/{numberOfMovies(props.lists[key])}</span>}
-                onClick={() => props.onTileClick(key)}
-                >
-                <div>
-                  {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
-                  <IconButton>
-                    <Edit
-                      style={{color: 'white', margin: '5px'}}
-                      onClick={e => {
-                        props.onEditListClick(key);
-                        e.stopPropagation();
-                      }}
-                      />
-                  </IconButton>
-                </div>
-              </GridTile>
-            ))
-          }
-        </GridList>
+    <AppBarHeader
+      barHeader='Mizu Movies'
+      />
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12" style={styles.root}>
+          <GridList style={styles.gridList} cellHeight={180}>
+            {
+              Object.keys(props.lists).map((key, index) => (
+                <GridTile style={{background:props.lists[key].colors}}
+                  title={props.lists[key].title}
+                  key={key}
+                  subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}</b>/{numberOfMovies(props.lists[key])}</span>}
+                  onClick={() => props.onTileClick(key)}
+                  >
+                  <div>
+                    {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
+                    <IconButton>
+                      <Edit
+                        style={{color: 'white', margin: '5px'}}
+                        onClick={e => {
+                          props.onEditListClick(key);
+                          e.stopPropagation();
+                        }}
+                        />
+                    </IconButton>
+                  </div>
+                </GridTile>
+              ))
+            }
+          </GridList>
+        </div>
       </div>
-    </div>
-    <div className="row">
-      <div className="col-xs-12">
-        <FloatingActionButton
-          style={styles.button}
-          onClick={() => props.onListClick()}>
-          <ContentAdd
-            />
-        </FloatingActionButton>
+      <div className="row">
+        <div className="col-xs-12">
+          <FloatingActionButton
+            style={styles.button}
+            onClick={() => props.onListClick()}>
+            <ContentAdd
+              />
+          </FloatingActionButton>
+        </div>
       </div>
     </div>
   </div>
