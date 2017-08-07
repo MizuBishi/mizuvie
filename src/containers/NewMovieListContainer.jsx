@@ -21,9 +21,9 @@ const mapStateToProps = (state, ownProps) => {
   return {
     shown: state.app.page === 'new',
     newMovie: state.app.newMovie,
-    newMovieTitle: state.app.newMovieTitle,
-    newMovieDescription: state.app.newMovieDescription,
-    newMovieColor: state.app.newMovieColor
+    newMovieTitle: state.app.newMovieListTitle,
+    newMovieDescription: state.app.newMovieListDescription,
+    newMovieColor: state.app.newMovieListColor
   }
 }
 

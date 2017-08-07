@@ -14,7 +14,8 @@ const NewMovieInList = (props) => (
     <div className="row">
       <div className="col-xs-12"></div>
       <TextField
-        hintText={props.hintText}
+        value={props.newMovieName}
+        onChange={e => props.setNewMovieName(e.target.value)}
         />
     </div>
     <div className="row">

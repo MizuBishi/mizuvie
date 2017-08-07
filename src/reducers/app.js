@@ -2,6 +2,8 @@ import { SHOW_LIST } from '../actions/app'
 import { NEW_LIST } from '../actions/app'
 import { EDIT_LIST } from '../actions/app'
 import { NEW_MOVIE } from '../actions/app'
+import { HOME_OVERVIEW } from '../actions/app'
+import { SET_NEW_MOVIE_NAME } from '../actions/app'
 
 
 export const INITIAL_STATE={
@@ -15,9 +17,13 @@ export const INITIAL_STATE={
     // newMovie: true,
     // editMovie: false,
 
-    newMovieTitle: 'New Movie',
-    newMovieDescription: 'New Description',
-    newMovieColor: '#00BCD4'
+    // Name of new movie in NewMovieInList.
+    newMovieTitle: '',
+
+    // Name/description/color of new movie list in NewMovieList
+    newMovieListTitle: 'New List',
+    newMovieListDescription: 'New Description',
+    newMovieListColor: '#00BCD4'
   },
   lists: {
     a: {
@@ -140,6 +146,24 @@ const reducer = (state = INITIAL_STATE, action) => {
       app: {
         ...state.app,
         newMovie: true,
+      }
+    };
+  }
+  if (action.type === HOME_OVERVIEW) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'overview',
+      }
+    };
+  }
+  if (action.type === SET_NEW_MOVIE_NAME) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        newMovieTitle: action.movie
       }
     };
   }
