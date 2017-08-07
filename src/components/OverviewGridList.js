@@ -29,12 +29,12 @@ const styles = {
   },
 };
 
-const numberOfMovies = (allList) => {
-  return Object.keys(allList.movies).length;
+const numberOfMovies = (actualList) => {
+  return Object.keys(actualList.movies).length;
 }
 
-const numberOfViewedMovies = (allList) => {
-  return Object.values(allList.movies).reduce((acc, movie) => acc + movie.viewed, 0);
+const numberOfViewedMovies = (actualList) => {
+  return Object.values(actualList.movies).reduce((acc, movie) => acc + movie.viewed, 0);
 }
 
 const OverviewGridList = (props) => (
