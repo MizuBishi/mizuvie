@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { HomeOverview } from '../actions/app'
-import { NewMovie, SetNewMovieName } from '../actions/app'
+import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie } from '../actions/app'
 import MovieList from '../components/MovieList';
 
 
@@ -14,6 +13,7 @@ const MovieListContainer = (props) => {
       movies={props.movieList.movies}
       onNewMovieClick={props.onNewMovieClick}
       onHomeOverviewClick={props.onHomeOverviewClick}
+      onCancelNewMovieClick={props.onCancelNewMovieClick}
       newMovie={props.newMovie}
       newMovieName={props.newMovieName}
       setNewMovieName={props.setNewMovieName}
@@ -36,6 +36,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onNewMovieClick: () => dispatch(NewMovie()),
     onHomeOverviewClick: () => dispatch(HomeOverview()),
+    onCancelNewMovieClick: () => dispatch(CancelNewMovie()),
     setNewMovieName: (value) => dispatch(SetNewMovieName(value))
   }
 }

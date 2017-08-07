@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { NewList } from '../actions/app'
+import { NewList, CancelNewList } from '../actions/app'
 import NewMovieList from '../components/NewMovieList';
 
 
@@ -11,6 +11,7 @@ const NewMovieListContainer = (props) => {
       title={props.newMovieTitle}
       description={props.newMovieDescription}
       selectedColor={props.newMovieColor}
+      onCancelNewListClick={props.onCancelNewListClick}
       />
   } else {
     return null;
@@ -27,8 +28,11 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = {}
-
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onCancelNewListClick: () => dispatch(CancelNewList()),
+  }
+}
 const ConnectedNewMovieListContainer = connect(
   mapStateToProps,
   mapDispatchToProps

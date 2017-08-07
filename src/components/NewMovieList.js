@@ -46,9 +46,16 @@ const NewMovieList = (props) => (
       </div>
       <div className="row">
         <RaisedButton
-          label="Cancel" primary={true} style={styles.button}/>
+          label="Cancel"
+          primary={true}
+          style={styles.button}
+          onClick={() => props.onCancelNewListClick()}
+          />
         <RaisedButton
-          label="Save" primary={true} style={styles.button}/>
+          label="Save"
+          primary={true}
+          style={styles.button}
+          />
       </div>
     </div>
   </div>

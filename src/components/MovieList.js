@@ -44,6 +44,7 @@ const MovieList = (props) => (
         {props.newMovie ? <NewMovieInList
           newMovieName={props.newMovieName}
           setNewMovieName={props.setNewMovieName}
+          onCancelNewMovieClick={props.onCancelNewMovieClick}
           /> : null}
           <div className="row">
             <div className="col-xs-12">

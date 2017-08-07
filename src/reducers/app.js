@@ -1,15 +1,10 @@
-import { SHOW_LIST } from '../actions/app'
-import { NEW_LIST } from '../actions/app'
-import { EDIT_LIST } from '../actions/app'
-import { NEW_MOVIE } from '../actions/app'
-import { HOME_OVERVIEW } from '../actions/app'
-import { SET_NEW_MOVIE_NAME } from '../actions/app'
-
+import { SHOW_LIST, NEW_LIST, EDIT_LIST, NEW_MOVIE, HOME_OVERVIEW,
+  SET_NEW_MOVIE_NAME, CANCEL_NEW_MOVIE, CANCEL_NEW_LIST } from '../actions/app'
 
 export const INITIAL_STATE={
   app: {
     // can be overview, list, new or edit
-    page: 'list',
+    page: 'edit',
     currentList: 'b',
     newMovie: false,
 
@@ -164,6 +159,25 @@ const reducer = (state = INITIAL_STATE, action) => {
       app: {
         ...state.app,
         newMovieTitle: action.movie
+      }
+    };
+  }
+  if (action.type === CANCEL_NEW_MOVIE) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'list',
+        newMovie: false,
+      }
+    };
+  }
+  if (action.type === CANCEL_NEW_LIST) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'overview',
       }
     };
   }
