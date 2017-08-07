@@ -1,10 +1,11 @@
 import { SHOW_LIST, NEW_LIST, EDIT_LIST, NEW_MOVIE, HOME_OVERVIEW,
-  SET_NEW_MOVIE_NAME, CANCEL_NEW_MOVIE, CANCEL_NEW_LIST } from '../actions/app'
+  SET_NEW_MOVIE_NAME, CANCEL_NEW_MOVIE, CANCEL_NEW_LIST,
+  EDIT_LIST_TITLE, SET_NEW_LIST_TITLE, SET_NEW_LIST_DESCRIPTION } from '../actions/app'
 
 export const INITIAL_STATE={
   app: {
     // can be overview, list, new or edit
-    page: 'edit',
+    page: 'new',
     currentList: 'b',
     newMovie: false,
 
@@ -16,7 +17,7 @@ export const INITIAL_STATE={
     newMovieTitle: '',
 
     // Name/description/color of new movie list in NewMovieList
-    newMovieListTitle: 'New List',
+    newMovieListTitle: 'New Title',
     newMovieListDescription: 'New Description',
     newMovieListColor: '#00BCD4'
   },
@@ -162,6 +163,15 @@ const reducer = (state = INITIAL_STATE, action) => {
       }
     };
   }
+  if (action.type === EDIT_LIST_TITLE) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        newMovieListTitle: action.list
+      }
+    };
+  }
   if (action.type === CANCEL_NEW_MOVIE) {
     return {
       ...state,
@@ -178,6 +188,24 @@ const reducer = (state = INITIAL_STATE, action) => {
       app: {
         ...state.app,
         page: 'overview',
+      }
+    };
+  }
+  if (action.type === SET_NEW_LIST_TITLE) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        newMovieListTitle: action.list
+      }
+    };
+  }
+  if (action.type === SET_NEW_LIST_DESCRIPTION) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        newMovieListDescription: action.list
       }
     };
   }
