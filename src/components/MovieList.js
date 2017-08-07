@@ -24,7 +24,7 @@ const styles = {
 const MovieList = (props) => (
   <div>
     <AppBarHeader
-      barHeader='My List'
+      barHeader={props.title}
       />
     <div className="container">
       <div className="row">

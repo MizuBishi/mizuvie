@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { EditList } from '../actions/app'
+import { HomeOverview } from '../actions/app'
+import { EditList, EditListTitle } from '../actions/app'
 import EditMovieList from '../components/EditMovieList';
 
 
@@ -11,6 +12,7 @@ const EditMovieListContainer = (props) => {
       title={props.movieList.title}
       description={props.movieList.description}
       selectedColor={props.movieList.colors}
+      editListTitle={props.editListTitle}
       />
   } else {
     return null;
@@ -24,7 +26,12 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onHomeOverviewClick: () => dispatch(HomeOverview()),
+    editListTitle: (value) => dispatch(EditListTitle(value)),
+  }
+}
 
 const ConnectedEditMovieListContainer = connect(
   mapStateToProps,

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie } from '../actions/app'
+import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie,
+EditListTitle } from '../actions/app'
 import MovieList from '../components/MovieList';
 
 

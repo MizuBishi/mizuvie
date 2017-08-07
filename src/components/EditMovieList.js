@@ -19,13 +19,14 @@ const styles = {
 const EditMovieList = (props) => (
   <div>
     <AppBarHeader
-      barHeader='Edit List'
+      barHeader={`Edit ${props.title}`}
       />
     <div className="container">
       <div className="row">
         <div className="col-xs-6">
           <TextField
             value={props.title}
+            onChange={e => props.editListTitle(e.target.value)}
             />
         </div>
       </div>

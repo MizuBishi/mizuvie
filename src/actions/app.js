@@ -3,9 +3,12 @@ export const NEW_LIST = 'NEW_LIST';
 export const EDIT_LIST = 'EDIT_LIST';
 export const NEW_MOVIE = 'NEW_MOVIE';
 export const HOME_OVERVIEW = 'HOME_OVERVIEW';
+export const EDIT_LIST_TITLE = 'EDIT_LIST_TITLE';
 export const SET_NEW_MOVIE_NAME = 'SET_NEW_MOVIE_NAME';
 export const CANCEL_NEW_MOVIE = 'CANCEL_NEW_MOVIE';
 export const CANCEL_NEW_LIST = 'CANCEL_NEW_LIST';
+export const SET_NEW_LIST_TITLE = 'SET_NEW_LIST_TITLE';
+export const SET_NEW_LIST_DESCRIPTION = 'SET_NEW_LIST_DESCRIPTION';
 
 
 // parameter "list" is e.g. "a" for the "TV Series" list
@@ -41,6 +44,13 @@ export const HomeOverview = () => {
   }
 }
 
+export const EditListTitle = (list) => {
+  return {
+    type: EDIT_LIST_TITLE,
+    list: list
+  }
+}
+
 export const SetNewMovieName = (movie) => {
   return {
     type: SET_NEW_MOVIE_NAME,
@@ -57,5 +67,17 @@ export const CancelNewMovie = () => {
 export const CancelNewList = () => {
   return {
     type: CANCEL_NEW_LIST,
+  }
+}
+
+export const SetNewListTitle = () => {
+  return {
+    type: SET_NEW_LIST_TITLE,
+  }
+}
+
+export const SetNewListDescription = () => {
+  return {
+    type: SET_NEW_LIST_DESCRIPTION,
   }
 }

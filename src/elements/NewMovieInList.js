@@ -11,18 +11,22 @@ const style = {
 
 const NewMovieInList = (props) => (
   <div className="container">
+    <TextField
+      value={props.newMovieName}
+      onChange={e => props.setNewMovieName(e.target.value)}
+      />
     <div className="row">
-      <div className="col-xs-12"></div>
-      <TextField
-        value={props.newMovieName}
-        onChange={e => props.setNewMovieName(e.target.value)}
+      <RaisedButton
+        label='Save'
+        primary={true}
+        style={style}
         />
-    </div>
-    <div className="row">
       <RaisedButton
-        label='Save' primary={true} style={style}/>
-      <RaisedButton
-        label='Cancel' primary={true} style={style}/>
+        label='Cancel'
+        primary={true}
+        style={style}
+        onClick={() => props.onCancelNewMovieClick()}
+        />
     </div>
   </div>
 );
