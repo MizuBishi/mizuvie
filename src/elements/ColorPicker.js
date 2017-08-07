@@ -2,6 +2,8 @@ import React from 'react';
 
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
+import ColorIcon from 'material-ui/svg-icons/editor/format-color-fill';
 
 
 const COLORS = [
@@ -15,7 +17,8 @@ const COLORS = [
 
 const ColorPicker = (props) => (
   <DropDownMenu
-    value={props.selectedColor}>
+    iconButton= {<ColorIcon />}
+      value={props.selectedColor}>
     {(() => (COLORS.map((item, i) => (
       <MenuItem
         key={i}
