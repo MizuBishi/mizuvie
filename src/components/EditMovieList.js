@@ -6,12 +6,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 import ColorPicker from '../elements/ColorPicker';
 import AppBarHeader from '../elements/AppBarHeader';
 
-//how to concenate strings? e.g. barHeader='Edit ' + {props.title}
 
-const style = {
-  margin: 12,
+const styles = {
+  text: {
+    margin: 12,
+  },
+  button: {
+    marginRight: 20,
+    float: 'right',
+  },
 };
-
 const EditMovieList = (props) => (
   <div>
     <AppBarHeader
@@ -38,11 +42,11 @@ const EditMovieList = (props) => (
       </div>
       <div className="row">
         <RaisedButton
-          label='Save' primary={true} style={style}/>
+          label='Save' primary={true} style={styles.button}/>
         <RaisedButton
-          label='Cancel' primary={true} style={style}/>
+          label='Cancel' primary={true} style={styles.button}/>
         <RaisedButton
-          label='Delete' primary={true} style={style}/>
+          label='Delete' primary={true} style={styles.button}/>
       </div>
     </div>
   </div>

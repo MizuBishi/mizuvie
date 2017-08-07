@@ -46,9 +46,9 @@ const NewMovieList = (props) => (
       </div>
       <div className="row">
         <RaisedButton
-          label="Save" primary={true} style={styles.button}/>
-        <RaisedButton
           label="Cancel" primary={true} style={styles.button}/>
+        <RaisedButton
+          label="Save" primary={true} style={styles.button}/>
       </div>
     </div>
   </div>
