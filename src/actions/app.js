@@ -9,6 +9,8 @@ export const CANCEL_NEW_MOVIE = 'CANCEL_NEW_MOVIE';
 export const CANCEL_NEW_LIST = 'CANCEL_NEW_LIST';
 export const SET_NEW_LIST_TITLE = 'SET_NEW_LIST_TITLE';
 export const SET_NEW_LIST_DESCRIPTION = 'SET_NEW_LIST_DESCRIPTION';
+export const DELETE_MOVIE = 'DELETE_MOVIE';
+
 
 
 // parameter "list" is e.g. "a" for the "TV Series" list
@@ -81,5 +83,13 @@ export const SetNewListDescription = (description) => {
   return {
     type: SET_NEW_LIST_DESCRIPTION,
     description: description
+  }
+}
+
+export const DeleteMovie = (list, movie) => {
+  return {
+    type: DELETE_MOVIE,
+    list: list,
+    movie: movie
   }
 }

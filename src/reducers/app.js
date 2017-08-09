@@ -1,6 +1,7 @@
 import { SHOW_LIST, NEW_LIST, EDIT_LIST, NEW_MOVIE, HOME_OVERVIEW,
   SET_NEW_MOVIE_NAME, CANCEL_NEW_MOVIE, CANCEL_NEW_LIST,
-  EDIT_LIST_TITLE, SET_NEW_LIST_TITLE, SET_NEW_LIST_DESCRIPTION } from '../actions/app'
+  EDIT_LIST_TITLE, SET_NEW_LIST_TITLE, SET_NEW_LIST_DESCRIPTION,
+  DELETE_MOVIE } from '../actions/app'
 
 export const INITIAL_STATE={
   app: {
@@ -208,6 +209,20 @@ const reducer = (state = INITIAL_STATE, action) => {
         newMovieListDescription: action.list
       }
     };
+  }
+  if (action.type === DELETE_MOVIE) {
+    let movies = {...state.lists[action.list].movies};
+    delete movies[action.movie];
+    return {
+      ...state,
+      lists: {
+        ...state.lists,
+        [action.list]: {
+          ...state.lists[action.list],
+          movies: movies
+        }
+      }
+    }
   }
   return state;
 }

@@ -7,6 +7,7 @@ import ColorPicker from '../elements/ColorPicker';
 import AppBarHeader from '../elements/AppBarHeader';
 
 
+
 const styles = {
   text: {
     margin: 12,
@@ -20,7 +21,7 @@ const EditMovieList = (props) => (
   <div>
     <AppBarHeader
       barHeader={`Edit ${props.title}`}
-      onHomeOverviewClick={props.onHomeOverviewClick}      
+      onHomeOverviewClick={props.onHomeOverviewClick}
       />
     <div className="container">
       <div className="row">
