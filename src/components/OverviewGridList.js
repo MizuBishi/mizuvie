@@ -18,7 +18,7 @@ const styles = {
   gridList: {
     width: 500,
     overflowY: 'auto',
-    margin: '5px'
+    margin: '15px'
   },
   text: {
     fontWeight: '100',
@@ -42,38 +42,37 @@ const OverviewGridList = (props) => (
     <AppBarHeader
       barHeader='Mizu Movies'
       />
-    <div className="container">
-      <div className="row">
-        <div className="col-xs-12" style={styles.root}>
-          <GridList style={styles.gridList} cellHeight={180}>
-            {
-              Object.keys(props.lists).map((key, index) => (
-                <GridTile style={{background:props.lists[key].colors}}
-                  title={props.lists[key].title}
-                  key={key}
-                  subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}</b>/{numberOfMovies(props.lists[key])}</span>}
-                  onClick={() => props.onTileClick(key)}
-                  >
-                  <div>
-                    {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
-                    <IconButton>
-                      <Edit
-                        style={{color: 'white', margin: '5px'}}
-                        onClick={e => {
-                          props.onEditListClick(key);
-                          e.stopPropagation();
-                        }}
-                        />
-                    </IconButton>
-                  </div>
-                </GridTile>
-              ))
-            }
-          </GridList>
-        </div>
-      </div>
+    <div className="container" style={styles.root}>
+      <GridList
+        style={styles.gridList}
+        >
+        {
+          Object.keys(props.lists).map((key, index) => (
+            <GridTile style={{background:props.lists[key].colors}}
+              title={props.lists[key].title}
+              key={key}
+              subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}</b>/{numberOfMovies(props.lists[key])}</span>}
+              onClick={() => props.onTileClick(key)}
+              >
+              <div>
+                {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
+                <IconButton>
+                  <Edit
+                    style={{color: 'white', margin: '5px'}}
+                    onClick={e => {
+                      props.onEditListClick(key);
+                      e.stopPropagation();
+                    }}
+                    />
+                </IconButton>
+              </div>
+            </GridTile>
+          ))
+        }
+      </GridList>
       <div className="row">
         <div className="col-xs-12">
+
           <FloatingActionButton
             style={styles.button}
             onClick={() => props.onListClick()}>
@@ -82,7 +81,9 @@ const OverviewGridList = (props) => (
           </FloatingActionButton>
         </div>
       </div>
+
     </div>
+
   </div>
 );
 

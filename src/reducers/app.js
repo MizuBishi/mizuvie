@@ -5,7 +5,7 @@ import { SHOW_LIST, NEW_LIST, EDIT_LIST, NEW_MOVIE, HOME_OVERVIEW,
 export const INITIAL_STATE={
   app: {
     // can be overview, list, new or edit
-    page: 'new',
+    page: 'overview',
     currentList: 'b',
     newMovie: false,
 

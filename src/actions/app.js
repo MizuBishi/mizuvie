@@ -70,14 +70,16 @@ export const CancelNewList = () => {
   }
 }
 
-export const SetNewListTitle = () => {
+export const SetNewListTitle = (title) => {
   return {
     type: SET_NEW_LIST_TITLE,
+    title: title
   }
 }
 
-export const SetNewListDescription = () => {
+export const SetNewListDescription = (description) => {
   return {
     type: SET_NEW_LIST_DESCRIPTION,
+    description: description
   }
 }

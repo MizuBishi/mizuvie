@@ -25,6 +25,7 @@ const MovieList = (props) => (
   <div>
     <AppBarHeader
       barHeader={props.title}
+      showBack={true}
       />
     <div className="container">
       <div className="row">

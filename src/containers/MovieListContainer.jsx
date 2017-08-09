@@ -12,6 +12,7 @@ const MovieListContainer = (props) => {
       title={props.movieList.title}
       description={props.movieList.description}
       movies={props.movieList.movies}
+      
       onNewMovieClick={props.onNewMovieClick}
       onHomeOverviewClick={props.onHomeOverviewClick}
       onCancelNewMovieClick={props.onCancelNewMovieClick}

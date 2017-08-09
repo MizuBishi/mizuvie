@@ -15,11 +15,12 @@ const AppBarHeader = (props) => (
   <AppBar
     title={props.barHeader}
     titleStyle={styles.text}
-    iconElementLeft={<IconButton>
+    iconElementLeft={props.showBack ? <IconButton>
       <Back
         onClick={() => props.onHomeOverviewClick()}
         />
-    </IconButton>}
+    </IconButton> : null}
+    showMenuIconButton={!!props.showBack}
     />
 );
 

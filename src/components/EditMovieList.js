@@ -20,6 +20,7 @@ const EditMovieList = (props) => (
   <div>
     <AppBarHeader
       barHeader={`Edit ${props.title}`}
+      onHomeOverviewClick={props.onHomeOverviewClick}      
       />
     <div className="container">
       <div className="row">
