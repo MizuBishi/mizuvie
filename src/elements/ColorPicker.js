@@ -18,7 +18,7 @@ const COLORS = [
 const ColorPicker = (props) => (
   <DropDownMenu
     iconButton= {<ColorIcon />}
-      value={props.selectedColor}>
+    value={props.selectedColor}>
     {(() => (COLORS.map((item, i) => (
       <MenuItem
         key={i}

@@ -27,7 +27,7 @@ const NewMovieList = (props) => (
         <div className="col-xs-12">
           <TextField
             hintText='Title'
-            value={props.newMovieListTitle}
+            value={props.newListTitle}
             onChange={e => props.setNewListTitle(e.target.value)}
             />
         </div>
@@ -36,7 +36,7 @@ const NewMovieList = (props) => (
         <div className="col-xs-12">
           <TextField
             hintText='Description'
-            value={props.newMovieListDescription}
+            value={props.newListDescription}
             onChange={e => props.setNewListDescription(e.target.value)}
             />
         </div>

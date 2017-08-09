@@ -8,7 +8,6 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import Subheader from 'material-ui/Subheader';
 import IconButton from 'material-ui/IconButton';
 
-
 import NewMovieInList from '../elements/NewMovieInList';
 import AppBarHeader from '../elements/AppBarHeader';
 

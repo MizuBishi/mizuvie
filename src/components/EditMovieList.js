@@ -7,7 +7,6 @@ import ColorPicker from '../elements/ColorPicker';
 import AppBarHeader from '../elements/AppBarHeader';
 
 
-
 const styles = {
   text: {
     margin: 12,
@@ -17,6 +16,7 @@ const styles = {
     float: 'right',
   },
 };
+
 const EditMovieList = (props) => (
   <div>
     <AppBarHeader

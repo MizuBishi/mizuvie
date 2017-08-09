@@ -12,6 +12,7 @@ export const SET_NEW_LIST_DESCRIPTION = 'SET_NEW_LIST_DESCRIPTION';
 export const DELETE_MOVIE = 'DELETE_MOVIE';
 export const SAVE_EDIT_LIST = 'SAVE_EDIT_LIST';
 
+
 // parameter "list" is e.g. "a" for the "TV Series" list
 export const ShowList = list => {
   return {
