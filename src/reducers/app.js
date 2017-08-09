@@ -1,7 +1,7 @@
 import { SHOW_LIST, NEW_LIST, EDIT_LIST, NEW_MOVIE, HOME_OVERVIEW,
   SET_NEW_MOVIE_NAME, CANCEL_NEW_MOVIE, CANCEL_NEW_LIST,
   EDIT_LIST_TITLE, SET_NEW_LIST_TITLE, SET_NEW_LIST_DESCRIPTION,
-  DELETE_MOVIE } from '../actions/app'
+  DELETE_MOVIE, SAVE_EDIT_LIST } from '../actions/app'
 
 export const INITIAL_STATE={
   app: {
@@ -133,8 +133,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       app: {
         ...state.app,
         page: 'edit',
-        currentList: action.list
-      }
+        currentList: action.list,
+        newMovieListTitle: state.lists[action.list].title,
+        newMovieListDescription: state.lists[action.list].description,
+        newMovieListColor: state.lists[action.list].colors,
+      },
     };
   }
   if (action.type === NEW_MOVIE) {
@@ -220,6 +223,24 @@ const reducer = (state = INITIAL_STATE, action) => {
         [action.list]: {
           ...state.lists[action.list],
           movies: movies
+        }
+      }
+    }
+  }
+  if (action.type === SAVE_EDIT_LIST) {
+    return {
+      ...state,
+      app: {
+        ...state.app,
+        page: 'overview'
+      },
+      lists: {
+        ...state.lists,
+        [action.list]: {
+          ...state.lists[action.list],
+          title: state.app.newMovieListTitle,
+          description: state.app.newMovieListDescription,
+          colors: state.app.newMovieListColor,
         }
       }
     }

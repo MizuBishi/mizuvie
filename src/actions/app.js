@@ -10,8 +10,7 @@ export const CANCEL_NEW_LIST = 'CANCEL_NEW_LIST';
 export const SET_NEW_LIST_TITLE = 'SET_NEW_LIST_TITLE';
 export const SET_NEW_LIST_DESCRIPTION = 'SET_NEW_LIST_DESCRIPTION';
 export const DELETE_MOVIE = 'DELETE_MOVIE';
-
-
+export const SAVE_EDIT_LIST = 'SAVE_EDIT_LIST';
 
 // parameter "list" is e.g. "a" for the "TV Series" list
 export const ShowList = list => {
@@ -91,5 +90,12 @@ export const DeleteMovie = (list, movie) => {
     type: DELETE_MOVIE,
     list: list,
     movie: movie
+  }
+}
+
+export const SaveEditList = (list) => {
+  return {
+    type: SAVE_EDIT_LIST,
+    list: list,
   }
 }

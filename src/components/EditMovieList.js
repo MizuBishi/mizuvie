@@ -45,10 +45,12 @@ const EditMovieList = (props) => (
       </div>
       <div className="row">
         <RaisedButton
-          label='Delete' primary={true} style={styles.button}/>
+          label='Delete' primary={true} style={styles.button}
+          />
         <RaisedButton
           label='Cancel' primary={true} style={styles.button}/>
         <RaisedButton
+          onClick={() => props.onSaveEditListClick(props.currentList)}
           label='Save' primary={true} style={styles.button}/>
       </div>
     </div>
