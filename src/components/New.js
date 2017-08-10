@@ -21,6 +21,7 @@ const NewList = (props) => (
   <div>
     <AppBarHeader
       barHeader='New List'
+      onHomeOverviewClick={props.onHomeOverviewClick}
       showBack={true}
       />
     <div className="container">

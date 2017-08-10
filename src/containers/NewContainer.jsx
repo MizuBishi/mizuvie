@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import New from '../components/New';
 
 import { CancelNewList, SetNewListTitle, SetNewListDescription } from '../actions/new'
+import { HomeOverview } from '../actions/app'
 
 
 const NewContainer = (props) => {
@@ -13,6 +14,7 @@ const NewContainer = (props) => {
       description={props.newMovieDescription}
       selectedColor={props.newMovieColor}
 
+      onHomeOverviewClick={props.onHomeOverviewClick}
       onCancelNewListClick={props.onCancelNewListClick}
       setNewListTitle={props.setNewListTitle}
       setNewListDescription={props.setNewListDescription}
@@ -34,6 +36,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    onHomeOverviewClick: () => dispatch(HomeOverview()),
     onCancelNewListClick: () => dispatch(CancelNewList()),
     setNewListTitle: (value) => dispatch(SetNewListTitle(value)),
     setNewListDescription: (value) => dispatch(SetNewListDescription(value))
