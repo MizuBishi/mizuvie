@@ -5,9 +5,9 @@ import '../index.css';
 import App from '../App';
 import {INITIAL_STATE} from '../reducers/app';
 
-import OverviewGridList from '../components/OverviewGridList';
-import MovieList from '../components/MovieList';
-import NewMovieList from '../components/NewMovieList';
+import Overview from '../components/Overview';
+import List from '../components/List';
+import NewList from '../components/NewList';
 import Edit from '../components/Edit';
 import ColorPicker from '../elements/ColorPicker';
 import NewMovieInList from '../elements/NewMovieInList';
@@ -44,15 +44,15 @@ storiesOf('Pages', module)
     </div>
   </MuiThemeProvider>
 ))
-.add('MovieList', () => (
-  <MovieList
+.add('List', () => (
+  <List
     title={INITIAL_STATE.lists.a.title}
     description={INITIAL_STATE.lists.a.description}
     movies={INITIAL_STATE.lists.a.movies}
     />
 ))
-.add('NewMovieList', () => (
-  <NewMovieList
+.add('NewList', () => (
+  <NewList
     hintTitle="Title"
     hintDescription="Description"
     />
@@ -64,10 +64,10 @@ storiesOf('Pages', module)
     hintDescription="Description"
     />
 ))
-.add('OverviewGridList', () => (
+.add('Overview', () => (
   <div className="row">
     <div className="col-xs-4">
-      <OverviewGridList
+      <Overview
         lists={INITIAL_STATE.lists}
         />
     </div>

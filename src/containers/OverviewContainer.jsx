@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import OverviewGridList from '../components/OverviewGridList';
+import Overview from '../components/Overview';
 
 import { ShowList, NewList, EditList } from '../actions/overview'
 
 
-const OverviewListContainer = (props) => {
+const OverviewContainer = (props) => {
   if (props.shown) {
-    return   <OverviewGridList
+    return   <Overview
       lists={props.lists}
       onTileClick={props.onTileClick}
       onListClick={props.onListClick}
@@ -34,9 +34,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const ConnectedOverviewListContainer = connect(
+const ConnectedOverviewContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(OverviewListContainer)
+)(OverviewContainer)
 
-export default ConnectedOverviewListContainer
+export default ConnectedOverviewContainer

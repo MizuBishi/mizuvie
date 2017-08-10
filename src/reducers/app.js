@@ -8,12 +8,12 @@ import { HOME_OVERVIEW } from '../actions/app';
 export const INITIAL_STATE={
   app: {
     // can be overview, list, new or edit
-    page: 'list',
+    page: 'overview',
     currentList: 'b',
     newMovie: false,
     newMovieTitle: '',
 
-    // Name/description/color of new movie list in NewMovieList
+    // Name/description/color of new movie list in NewList
     newListTitle: 'New Title',
     newListDescription: 'New Description',
     newListColor: '#00BCD4'

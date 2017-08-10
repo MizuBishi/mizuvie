@@ -22,7 +22,7 @@ const styles = {
   },
 };
 
-const MovieList = (props) => (
+const ListOfMovies = (props) => (
   <div>
     <AppBarHeader
       barHeader={props.title}
@@ -72,13 +72,4 @@ const MovieList = (props) => (
           </div>
         );
 
-        MovieList.propTypes = {
-          title: React.PropTypes.string,
-          description: React.PropTypes.string,
-          movies: React.PropTypes.shape({
-            title: React.PropTypes.string,
-            viewed: React.PropTypes.bool,
-          })
-        };
-
-        export default MovieList;
+        export default ListOfMovies;

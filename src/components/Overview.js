@@ -37,7 +37,7 @@ const numberOfViewedMovies = (actualList) => {
   return Object.values(actualList.movies).reduce((acc, movie) => acc + movie.viewed, 0);
 }
 
-const OverviewGridList = (props) => (
+const Overview = (props) => (
   <div>
     <AppBarHeader
       barHeader='Mizu Movies'
@@ -89,11 +89,11 @@ const OverviewGridList = (props) => (
   </div>
 );
 
-OverviewGridList.propTypes = {
+Overview.propTypes = {
   lists: React.PropTypes.shape({
     title: React.PropTypes.string,
     subtitle: React.PropTypes.number,
   })
 };
 
-export default OverviewGridList;
+export default Overview;

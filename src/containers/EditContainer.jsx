@@ -11,8 +11,8 @@ const EditContainer = (props) => {
   if (props.shown) {
     return <Edit
       title={props.title}
-      description={props.movieList.description}
-      selectedColor={props.movieList.colors}
+      description={props.List.description}
+      selectedColor={props.List.colors}
       currentList={props.currentList}
 
       editListTitle={props.editListTitle}
@@ -31,7 +31,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     shown: state.app.page === 'edit',
     currentList: state.app.currentList,
-    movieList: state.lists[state.app.currentList],
+    List: state.lists[state.app.currentList],
     title: state.app.newListTitle
   }
 }

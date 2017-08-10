@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import MovieList from '../components/MovieList';
+import ListOfMovies from '../components/ListOfMovies';
 
 import { NewMovie, SetNewMovieName, CancelNewMovie, DeleteMovie, CheckViewedMovie } from '../actions/list'
 import { HomeOverview } from '../actions/app'
 
 
-const MovieListContainer = (props) => {
+const ListContainer = (props) => {
   if (props.shown) {
-    return <MovieList
-      title={props.movieList.title}
-      description={props.movieList.description}
-      movies={props.movieList.movies}
+    return <ListOfMovies
+      title={props.List.title}
+      description={props.List.description}
+      movies={props.List.movies}
       currentList={props.currentList}
 
       onNewMovieClick={props.onNewMovieClick}
@@ -33,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     shown: state.app.page === 'list',
     currentList: state.app.currentList,
-    movieList: state.lists[state.app.currentList],
+    List: state.lists[state.app.currentList],
     newMovie: state.app.newMovie === true,
     newMovieName: state.app.newMovieTitle
   }
@@ -50,9 +50,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const ConnectedMovieListContainer = connect(
+const ConnectedListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MovieListContainer)
+)(ListContainer)
 
-export default ConnectedMovieListContainer
+export default ConnectedListContainer

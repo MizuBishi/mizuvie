@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-const NewMovieList = (props) => (
+const NewList = (props) => (
   <div>
     <AppBarHeader
       barHeader='New List'
@@ -64,10 +64,10 @@ const NewMovieList = (props) => (
   </div>
 );
 
-NewMovieList.propTypes = {
+NewList.propTypes = {
   title: React.PropTypes.string,
   description: React.PropTypes.string,
   selectedColor: React.PropTypes.string,
 };
 
-export default NewMovieList;
+export default NewList;

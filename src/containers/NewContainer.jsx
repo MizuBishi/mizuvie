@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import NewMovieList from '../components/NewMovieList';
+import New from '../components/New';
 
 import { CancelNewList, SetNewListTitle, SetNewListDescription } from '../actions/new'
 
 
-const NewMovieListContainer = (props) => {
+const NewContainer = (props) => {
   if (props.shown) {
-    return <NewMovieList
+    return <New
       title={props.newMovieTitle}
       description={props.newMovieDescription}
       selectedColor={props.newMovieColor}
@@ -39,9 +39,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     setNewListDescription: (value) => dispatch(SetNewListDescription(value))
   }
 }
-const ConnectedNewMovieListContainer = connect(
+const ConnectedNewContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewMovieListContainer)
+)(NewContainer)
 
-export default ConnectedNewMovieListContainer
+export default ConnectedNewContainer

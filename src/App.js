@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 import './App.css';
 import './grid12.css';
 
-import ConnectedMovieListContainer from './containers/ListContainer';
-import ConnectedOverviewListContainer from './containers/OverviewContainer';
-import ConnectedNewMovieListContainer from './containers/NewContainer';
+import ConnectedListContainer from './containers/ListContainer';
+import ConnectedOverviewContainer from './containers/OverviewContainer';
+import ConnectedNewContainer from './containers/NewContainer';
 import ConnectedEditContainer from './containers/EditContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <ConnectedMovieListContainer />
-        <ConnectedOverviewListContainer />
-        <ConnectedNewMovieListContainer />
+        <ConnectedListContainer />
+        <ConnectedOverviewContainer />
+        <ConnectedNewContainer />
         <ConnectedEditContainer />
       </div>
     );
