@@ -1,4 +1,3 @@
-export const EDIT_LIST = 'EDIT_LIST';
 export const EDIT_LIST_TITLE = 'EDIT_LIST_TITLE';
 export const EDIT_LIST_DESCRIPTION = 'EDIT_LIST_DESCRIPTION';
 export const SAVE_EDIT_LIST = 'SAVE_EDIT_LIST';
@@ -6,12 +5,6 @@ export const CANCEL_EDIT_LIST = 'CANCEL_EDIT_LIST';
 export const DELETE_LIST = 'DELETE_LIST';
 
 
-export const EditList = list => {
-  return {
-    type: EDIT_LIST,
-    list: list
-  }
-}
 export const EditListTitle = (list) => {
   return {
     type: EDIT_LIST_TITLE,
