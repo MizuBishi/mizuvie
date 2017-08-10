@@ -1,57 +1,58 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie,
-  DeleteMovie, CheckViewedMovie } from '../actions/app'
-  import MovieList from '../components/MovieList';
+import MovieList from '../components/MovieList';
+
+import { NewMovie, SetNewMovieName, CancelNewMovie, DeleteMovie, CheckViewedMovie } from '../actions/list'
+import { HomeOverview } from '../actions/app'
 
 
-  const MovieListContainer = (props) => {
-    if (props.shown) {
-      return <MovieList
-        title={props.movieList.title}
-        description={props.movieList.description}
-        movies={props.movieList.movies}
-        currentList={props.currentList}
+const MovieListContainer = (props) => {
+  if (props.shown) {
+    return <MovieList
+      title={props.movieList.title}
+      description={props.movieList.description}
+      movies={props.movieList.movies}
+      currentList={props.currentList}
 
-        onNewMovieClick={props.onNewMovieClick}
-        onHomeOverviewClick={props.onHomeOverviewClick}
-        onCancelNewMovieClick={props.onCancelNewMovieClick}
-        newMovie={props.newMovie}
-        newMovieName={props.newMovieName}
-        setNewMovieName={props.setNewMovieName}
-        onDeleteMovieClick={props.onDeleteMovieClick}
-        onCheckViewedMovie={props.onCheckViewedMovie}
-        />
-    } else {
-      return null;
-    }
+      onNewMovieClick={props.onNewMovieClick}
+      onHomeOverviewClick={props.onHomeOverviewClick}
+      onCancelNewMovieClick={props.onCancelNewMovieClick}
+      newMovie={props.newMovie}
+      newMovieName={props.newMovieName}
+      setNewMovieName={props.setNewMovieName}
+      onDeleteMovieClick={props.onDeleteMovieClick}
+      onCheckViewedMovie={props.onCheckViewedMovie}
+      />
+  } else {
+    return null;
   }
+}
 
-  const mapStateToProps = (state, ownProps) => {
-    return {
-      shown: state.app.page === 'list',
-      currentList: state.app.currentList,
-      movieList: state.lists[state.app.currentList],
-      newMovie: state.app.newMovie === true,
-      newMovieName: state.app.newMovieTitle
-    }
+const mapStateToProps = (state, ownProps) => {
+  return {
+    shown: state.app.page === 'list',
+    currentList: state.app.currentList,
+    movieList: state.lists[state.app.currentList],
+    newMovie: state.app.newMovie === true,
+    newMovieName: state.app.newMovieTitle
   }
+}
 
-  const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-      onNewMovieClick: () => dispatch(NewMovie()),
-      onHomeOverviewClick: () => dispatch(HomeOverview()),
-      onCancelNewMovieClick: () => dispatch(CancelNewMovie()),
-      setNewMovieName: (value) => dispatch(SetNewMovieName(value)),
-      onDeleteMovieClick: (list, movie) => dispatch(DeleteMovie(list, movie)),
-      onCheckViewedMovie: (value, list, movie) => dispatch(CheckViewedMovie(value, list, movie)),
-    }
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onNewMovieClick: () => dispatch(NewMovie()),
+    onHomeOverviewClick: () => dispatch(HomeOverview()),
+    onCancelNewMovieClick: () => dispatch(CancelNewMovie()),
+    setNewMovieName: (value) => dispatch(SetNewMovieName(value)),
+    onDeleteMovieClick: (list, movie) => dispatch(DeleteMovie(list, movie)),
+    onCheckViewedMovie: (value, list, movie) => dispatch(CheckViewedMovie(value, list, movie)),
   }
+}
 
-  const ConnectedMovieListContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(MovieListContainer)
+const ConnectedMovieListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MovieListContainer)
 
-  export default ConnectedMovieListContainer
+export default ConnectedMovieListContainer

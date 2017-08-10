@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { CancelNewList, SetNewListTitle,
-SetNewListDescription } from '../actions/app'
 import NewMovieList from '../components/NewMovieList';
+
+import { CancelNewList, SetNewListTitle, SetNewListDescription } from '../actions/new'
 
 
 const NewMovieListContainer = (props) => {

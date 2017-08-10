@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { ShowList } from '../actions/app'
-import { NewList } from '../actions/app'
-import { EditList } from '../actions/app'
 import OverviewGridList from '../components/OverviewGridList';
+
+import { ShowList, NewList, EditList } from '../actions/overview'
 
 
 const OverviewListContainer = (props) => {
@@ -19,7 +18,6 @@ const OverviewListContainer = (props) => {
     return null;
   }
 }
-
 
 const mapStateToProps = (state, ownProps) => {
   return {
