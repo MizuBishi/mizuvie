@@ -65,10 +65,4 @@ const NewList = (props) => (
   </div>
 );
 
-NewList.propTypes = {
-  title: React.PropTypes.string,
-  description: React.PropTypes.string,
-  selectedColor: React.PropTypes.string,
-};
-
 export default NewList;

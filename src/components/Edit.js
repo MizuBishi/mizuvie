@@ -69,10 +69,4 @@ const Edit = (props) => (
   </div>
 );
 
-Edit.propTypes = {
-  title: React.PropTypes.string,
-  description: React.PropTypes.string,
-  selectedColor: React.PropTypes.string,
-};
-
 export default Edit;

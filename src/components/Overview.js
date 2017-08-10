@@ -89,11 +89,4 @@ const Overview = (props) => (
   </div>
 );
 
-Overview.propTypes = {
-  lists: React.PropTypes.shape({
-    title: React.PropTypes.string,
-    subtitle: React.PropTypes.number,
-  })
-};
-
 export default Overview;
