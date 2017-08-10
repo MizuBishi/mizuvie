@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import EditMovieList from '../components/EditMovieList';
+import Edit from '../components/Edit';
 
 import { EditListTitle, EditListDescription, SaveEditList, CancelEditList, DeleteList } from '../actions/edit'
 import { HomeOverview } from '../actions/app'
 
 
-const EditMovieListContainer = (props) => {
+const EditContainer = (props) => {
   if (props.shown) {
-    return <EditMovieList
+    return <Edit
       title={props.title}
       description={props.movieList.description}
       selectedColor={props.movieList.colors}
@@ -47,9 +47,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const ConnectedEditMovieListContainer = connect(
+const ConnectedEditContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditMovieListContainer)
+)(EditContainer)
 
-export default ConnectedEditMovieListContainer
+export default ConnectedEditContainer

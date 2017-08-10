@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-const EditMovieList = (props) => (
+const Edit = (props) => (
   <div>
     <AppBarHeader
       barHeader={`Edit ${props.title}`}
@@ -69,10 +69,10 @@ const EditMovieList = (props) => (
   </div>
 );
 
-EditMovieList.propTypes = {
+Edit.propTypes = {
   title: React.PropTypes.string,
   description: React.PropTypes.string,
   selectedColor: React.PropTypes.string,
 };
 
-export default EditMovieList;
+export default Edit;

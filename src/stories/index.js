@@ -8,7 +8,7 @@ import {INITIAL_STATE} from '../reducers/app';
 import OverviewGridList from '../components/OverviewGridList';
 import MovieList from '../components/MovieList';
 import NewMovieList from '../components/NewMovieList';
-import EditMovieList from '../components/EditMovieList';
+import Edit from '../components/Edit';
 import ColorPicker from '../elements/ColorPicker';
 import NewMovieInList from '../elements/NewMovieInList';
 
@@ -57,8 +57,8 @@ storiesOf('Pages', module)
     hintDescription="Description"
     />
 ))
-.add('EditMovieList', () => (
-  <EditMovieList
+.add('Edit', () => (
+  <Edit
     title='title'
     hintTitle="Title"
     hintDescription="Description"

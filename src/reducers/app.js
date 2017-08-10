@@ -8,7 +8,7 @@ import { HOME_OVERVIEW } from '../actions/app';
 export const INITIAL_STATE={
   app: {
     // can be overview, list, new or edit
-    page: 'edit',
+    page: 'list',
     currentList: 'b',
     newMovie: false,
     newMovieTitle: '',
