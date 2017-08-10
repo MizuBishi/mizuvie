@@ -1,5 +1,4 @@
 import React from 'react';
-import {storiesOf} from '@kadira/storybook';
 
 import AppBar from 'material-ui/AppBar';
 import Back from 'material-ui/svg-icons/hardware/keyboard-backspace';

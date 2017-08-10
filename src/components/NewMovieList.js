@@ -21,6 +21,7 @@ const NewMovieList = (props) => (
   <div>
     <AppBarHeader
       barHeader='New List'
+      showBack={true}
       />
     <div className="container">
       <div className="row">

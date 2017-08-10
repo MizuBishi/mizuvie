@@ -27,6 +27,7 @@ const MovieList = (props) => (
     <AppBarHeader
       barHeader={props.title}
       showBack={true}
+      onHomeOverviewClick={props.onHomeOverviewClick}
       />
     <div className="container">
       <div className="row">
@@ -37,44 +38,47 @@ const MovieList = (props) => (
               <ListItem
                 primaryText={props.movies[key].title}
                 key={key}
-                leftCheckbox={<Checkbox checked={props.movies[key].viewed} />}
-                rightIcon={
-                  <IconButton>
-                    <Delete
-                      onClick={() => props.onDeleteMovieClick(props.currentList, key)}
+                leftCheckbox={
+                  <Checkbox checked={props.movies[key].viewed}
+                    onCheck={e => props.onCheckViewedMovie(e.target.checked, props.currentList, key)}
+                    />}
+                    rightIcon={
+                      <IconButton>
+                        <Delete
+                          onClick={() => props.onDeleteMovieClick(props.currentList, key)}
+                          />
+                      </IconButton>}
                       />
-                  </IconButton>}
-                  />
-              ))
-            }
-          </List>
-          {props.newMovie ? <NewMovieInList
-            newMovieName={props.newMovieName}
-            setNewMovieName={props.setNewMovieName}
-            onCancelNewMovieClick={props.onCancelNewMovieClick}
-            /> : null}
-            <div className="row">
-              <div className="col-xs-12">
-                <FloatingActionButton
-                  style={styles.button}
-                  onClick={() => props.onNewMovieClick()}>
-                  <ContentAdd
-                    />
-                </FloatingActionButton>
+                  ))
+                }
+              </List>
+              {props.newMovie ? <NewMovieInList
+                newMovieName={props.newMovieName}
+                setNewMovieName={props.setNewMovieName}
+                onCancelNewMovieClick={props.onCancelNewMovieClick}
+                /> : null}
+                <div className="row">
+                  <div className="col-xs-12">
+                    <FloatingActionButton
+                      style={styles.button}
+                      onClick={() => props.onNewMovieClick()}>
+                      <ContentAdd
+                        />
+                    </FloatingActionButton>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    );
+        );
 
-    MovieList.propTypes = {
-      title: React.PropTypes.string,
-      description: React.PropTypes.string,
-      movies: React.PropTypes.shape({
-        title: React.PropTypes.string,
-        viewed: React.PropTypes.bool,
-      })
-    };
+        MovieList.propTypes = {
+          title: React.PropTypes.string,
+          description: React.PropTypes.string,
+          movies: React.PropTypes.shape({
+            title: React.PropTypes.string,
+            viewed: React.PropTypes.bool,
+          })
+        };
 
-    export default MovieList;
+        export default MovieList;

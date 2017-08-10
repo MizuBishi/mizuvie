@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { EditList, EditListTitle, HomeOverview,
-  SaveEditList } from '../actions/app'
+import { EditListTitle, EditListDescription, HomeOverview,
+  SaveEditList, CancelEditList, DeleteList } from '../actions/app'
   import EditMovieList from '../components/EditMovieList';
 
 
@@ -15,8 +15,11 @@ import { EditList, EditListTitle, HomeOverview,
         currentList={props.currentList}
 
         editListTitle={props.editListTitle}
+        editListDescription={props.editListDescription}
         onHomeOverviewClick={props.onHomeOverviewClick}
         onSaveEditListClick={props.onSaveEditListClick}
+        onCancelEditListClick={props.onCancelEditListClick}
+        onDeleteListClick={props.onDeleteListClick}
         />
     } else {
       return null;
@@ -36,8 +39,10 @@ import { EditList, EditListTitle, HomeOverview,
     return {
       onHomeOverviewClick: () => dispatch(HomeOverview()),
       editListTitle: (value) => dispatch(EditListTitle(value)),
-      onHomeOverviewClick: () => dispatch(HomeOverview()),
+      editListDescription: (value) => dispatch(EditListDescription(value)),
       onSaveEditListClick: (list) => dispatch(SaveEditList(list)),
+      onCancelEditListClick: () => dispatch(CancelEditList()),
+      onDeleteListClick: (list) => dispatch(DeleteList(list)),
     }
   }
 

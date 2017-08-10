@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie,
-  EditListTitle, DeleteMovie } from '../actions/app'
+  DeleteMovie, CheckViewedMovie } from '../actions/app'
   import MovieList from '../components/MovieList';
 
 
@@ -21,6 +21,7 @@ import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie,
         newMovieName={props.newMovieName}
         setNewMovieName={props.setNewMovieName}
         onDeleteMovieClick={props.onDeleteMovieClick}
+        onCheckViewedMovie={props.onCheckViewedMovie}
         />
     } else {
       return null;
@@ -44,6 +45,7 @@ import { NewMovie, SetNewMovieName, HomeOverview, CancelNewMovie,
       onCancelNewMovieClick: () => dispatch(CancelNewMovie()),
       setNewMovieName: (value) => dispatch(SetNewMovieName(value)),
       onDeleteMovieClick: (list, movie) => dispatch(DeleteMovie(list, movie)),
+      onCheckViewedMovie: (value, list, movie) => dispatch(CheckViewedMovie(value, list, movie)),
     }
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { NewList, CancelNewList, SetNewListTitle,
+import { CancelNewList, SetNewListTitle,
 SetNewListDescription } from '../actions/app'
 import NewMovieList from '../components/NewMovieList';
 
@@ -12,7 +12,7 @@ const NewMovieListContainer = (props) => {
       title={props.newMovieTitle}
       description={props.newMovieDescription}
       selectedColor={props.newMovieColor}
-      
+
       onCancelNewListClick={props.onCancelNewListClick}
       setNewListTitle={props.setNewListTitle}
       setNewListDescription={props.setNewListDescription}

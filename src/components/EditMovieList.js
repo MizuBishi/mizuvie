@@ -22,6 +22,7 @@ const EditMovieList = (props) => (
     <AppBarHeader
       barHeader={`Edit ${props.title}`}
       onHomeOverviewClick={props.onHomeOverviewClick}
+      showBack={true}
       />
     <div className="container">
       <div className="row">
@@ -35,7 +36,9 @@ const EditMovieList = (props) => (
       <div className="row">
         <div className="col-xs-6">
           <TextField
-            value={props.description}/>
+            value={props.description}
+            onChange={e => props.editListDescription(e.target.value)}
+            />
         </div>
       </div>
       <div className="row" style={{marginLeft: '-20px'}}>
@@ -45,13 +48,22 @@ const EditMovieList = (props) => (
       </div>
       <div className="row">
         <RaisedButton
-          label='Delete' primary={true} style={styles.button}
+          label='Delete'
+          primary={true}
+          style={styles.button}
+          onClick={() => props.onDeleteListClick(props.currentList)}
           />
         <RaisedButton
-          label='Cancel' primary={true} style={styles.button}/>
+          label='Cancel'
+          primary={true}
+          style={styles.button}
+          onClick={() => props.onCancelEditListClick()}
+          />
         <RaisedButton
           onClick={() => props.onSaveEditListClick(props.currentList)}
-          label='Save' primary={true} style={styles.button}/>
+          label='Save'
+          primary={true}
+          style={styles.button}/>
       </div>
     </div>
   </div>

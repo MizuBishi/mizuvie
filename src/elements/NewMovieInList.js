@@ -1,5 +1,4 @@
 import React from 'react';
-import {storiesOf} from '@kadira/storybook';
 
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';

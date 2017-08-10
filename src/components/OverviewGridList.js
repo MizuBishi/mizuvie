@@ -51,11 +51,13 @@ const OverviewGridList = (props) => (
             <GridTile style={{background:props.lists[key].colors}}
               title={props.lists[key].title}
               key={key}
-              subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}</b>/{numberOfMovies(props.lists[key])}</span>}
-              onClick={() => props.onTileClick(key)}
-              >
-              <div>
-                {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key]) ? <Done style={{color: 'white', margin: '5px'}}/> : null}
+              subtitle={<span>Viewed: <b>{numberOfViewedMovies(props.lists[key])}
+            </b>/{numberOfMovies(props.lists[key])}</span>}
+            onClick={() => props.onTileClick(key)}
+            >
+            <div>
+              {numberOfMovies(props.lists[key]) === numberOfViewedMovies(props.lists[key])
+                ? <Done style={{color: 'white', margin: '5px'}}/> : null}
                 <IconButton>
                   <Edit
                     style={{color: 'white', margin: '5px'}}
