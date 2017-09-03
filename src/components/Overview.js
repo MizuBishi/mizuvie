@@ -12,8 +12,14 @@ import AppBarHeader from '../elements/AppBarHeader';
 
 const styles = {
   root: {
+    display: '-webkit-flex',
     display: 'flex',
-    flexWrap: 'wrap',
+    webkitFlexDirection: 'row',
+    flexDirection: 'row',
+    webkitAlignItems: 'center',
+    alignItems: 'center',
+    webkitJustifyContent: 'center',
+    justifyContent: 'center',
   },
   gridList: {
     width: 500,

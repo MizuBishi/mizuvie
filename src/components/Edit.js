@@ -28,7 +28,7 @@ const Edit = (props) => (
       <div className="row">
         <div className="col-xs-6">
           <TextField
-            value={props.title}
+            value={props.listTitle}
             onChange={e => props.editListTitle(e.target.value)}
             />
         </div>
@@ -36,14 +36,14 @@ const Edit = (props) => (
       <div className="row">
         <div className="col-xs-6">
           <TextField
-            value={props.description}
+            value={props.listDescription}
             onChange={e => props.editListDescription(e.target.value)}
             />
         </div>
       </div>
       <div className="row" style={{marginLeft: '-20px'}}>
         <ColorPicker
-          selectedColor={props.selectedColor}
+          selectedColor={props.listColor}
           />
       </div>
       <div className="row">

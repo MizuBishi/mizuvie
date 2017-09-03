@@ -10,13 +10,14 @@ import { HomeOverview } from '../actions/app'
 const EditContainer = (props) => {
   if (props.shown) {
     return <Edit
-      title={props.title}
-      description={props.List.description}
-      selectedColor={props.List.colors}
+      listTitle={props.listTitle}
+      listDescription={props.listDescription}
+      listColor={props.listColor}
       currentList={props.currentList}
 
       editListTitle={props.editListTitle}
       editListDescription={props.editListDescription}
+
       onHomeOverviewClick={props.onHomeOverviewClick}
       onSaveEditListClick={props.onSaveEditListClick}
       onCancelEditListClick={props.onCancelEditListClick}
@@ -31,16 +32,18 @@ const mapStateToProps = (state, ownProps) => {
   return {
     shown: state.app.page === 'edit',
     currentList: state.app.currentList,
-    List: state.lists[state.app.currentList],
-    title: state.app.newListTitle
+    listTitle: state.app.listTitle,
+    listDescription: state.app.listDescription,
+    listColor: state.app.listColor
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onHomeOverviewClick: () => dispatch(HomeOverview()),
     editListTitle: (value) => dispatch(EditListTitle(value)),
     editListDescription: (value) => dispatch(EditListDescription(value)),
+
+    onHomeOverviewClick: () => dispatch(HomeOverview()),
     onSaveEditListClick: (list) => dispatch(SaveEditList(list)),
     onCancelEditListClick: () => dispatch(CancelEditList()),
     onDeleteListClick: (list) => dispatch(DeleteList(list)),

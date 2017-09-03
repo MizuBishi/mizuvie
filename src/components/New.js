@@ -56,6 +56,7 @@ const NewList = (props) => (
           onClick={() => props.onCancelNewListClick()}
           />
         <RaisedButton
+          onClick={() => props.onSaveNewListClick(props.currentList)}
           label="Save"
           primary={true}
           style={styles.button}

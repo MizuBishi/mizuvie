@@ -11,6 +11,7 @@ const style = {
 const NewMovieInList = (props) => (
   <div className="container">
     <TextField
+      hintText='Movie Title'
       value={props.newMovieName}
       onChange={e => props.setNewMovieName(e.target.value)}
       />
