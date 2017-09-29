@@ -3,7 +3,7 @@ import { SHOW_LIST } from '../actions/app'
 export const INITIAL_STATE={
   app: {
     // can be overview or list or new or edit
-    page: 'new',
+    page: 'list',
     currentList: 'b',
 
     // new movie text field ar shown or not

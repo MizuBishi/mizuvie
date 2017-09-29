@@ -80,7 +80,6 @@ const Overview = (props) => (
       </GridList>
       <div className="row">
         <div className="col-xs-12">
-
           <FloatingActionButton
             style={styles.button}
             onClick={() => props.onListClick()}>
@@ -89,9 +88,7 @@ const Overview = (props) => (
           </FloatingActionButton>
         </div>
       </div>
-
     </div>
-
   </div>
 );
 

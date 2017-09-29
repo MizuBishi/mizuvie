@@ -50,4 +50,5 @@ const ConnectedNewContainer = connect(
   mapDispatchToProps
 )(NewContainer)
 
-export default ConnectedNewContainer
+//export default ConnectedNewContainer
+export default props => Notification({...props, personalMessage: 'hei wie geht es dir so? wäre unheimlich cool wenn Du beim Gig mit dabei wärst. Lieber Gruss Michelle hei wie geht es dir so? wäre unheimlich cool wenn Du beim Gig mit dabei wärst. Lieber Gruss Michelle'});
